@@ -9,8 +9,19 @@
   <style>
     body { font-family:'Cairo',sans-serif; background:#f7fafc; }
     table { table-layout:auto; width:100%; border-collapse:collapse; }
-    th, td { padding:10px; border-bottom:1px solid #e5e7eb; text-align:right; white-space:nowrap; }
-    th { background:#f1f5f9; cursor:pointer; user-select:none; }
+    th, td { 
+      padding:10px; 
+      border-bottom:1px solid #e5e7eb; 
+      text-align:center;       /* 🔹 يجعل النص في المنتصف أفقيًا */
+      vertical-align:middle;   /* 🔹 يجعل النص في المنتصف عموديًا */
+      white-space:nowrap; 
+    }
+    th { 
+      background:#f1f5f9; 
+      cursor:pointer; 
+      user-select:none;
+      font-weight:700;
+    }
     tr:hover { background:#f9fafb; }
     label { cursor:pointer; }
     td[title] {
@@ -19,15 +30,16 @@
     td[title]:hover::after {
       content: attr(title);
       position: absolute;
-      right: 0;
+      right: 50%;
       bottom: 100%;
+      transform: translateX(50%) translateY(-4px);
       background: rgba(0,0,0,0.75);
       color: #fff;
       padding: 5px 8px;
       border-radius: 6px;
       font-size: 0.75rem;
       white-space: nowrap;
-      transform: translateY(-4px);
+      z-index: 10;
     }
   </style>
 </head>
@@ -38,8 +50,6 @@
   </header>
 
   <div class="max-w-7xl mx-auto space-y-6">
-
-    <!-- 🔹 فلترة المدير -->
     <div>
       <label for="manager-filter" class="block text-sm font-medium text-gray-700 mb-2">تصفية حسب المدير:</label>
       <select id="manager-filter" class="w-full md:w-64 p-3 border border-gray-300 rounded-md bg-white shadow-sm focus:ring-2 focus:ring-indigo-500">
@@ -47,7 +57,6 @@
       </select>
     </div>
 
-    <!-- 🔹 فلترة المسمى الوظيفي -->
     <div>
       <h3 class="text-lg font-bold text-indigo-800 mb-3">تصفية حسب المسمى الوظيفي:</h3>
       <div id="role-checkboxes" class="flex flex-wrap gap-4">
@@ -124,12 +133,11 @@
       let rows = allEmployees.map(emp => `
         <tr>
           <td>${emp.name}</td>
-          <td>${emp.join_date}</td>
           <td>${emp.outlet}</td>
           <td>${formatNumber(emp.total_sales)}</td>
           <td title="${emp.tooltip}">${formatNumber(emp.avg)}</td>
+          <td title="تاريخ الانضمام: ${emp.join_date || '-'}">${emp.years_of_service}</td>
           <td>${formatNumber(emp.salary)}</td>
-          <td>${emp.years_of_service}</td>
           <td>${formatNumber(emp.commissions)}</td>
           <td>${formatNumber(emp.average_income)}</td>
         </tr>`).join('');
@@ -143,16 +151,15 @@
             <span class='text-gray-500 text-sm'>عدد الموظفين: ${allEmployees.length}</span>
           </div>
           <div class='overflow-x-auto'>
-            <table class='w-full text-sm text-gray-700'>
+            <table class='w-full text-sm text-gray-700 text-center'>
               <thead>
                 <tr>
                   <th data-key='name'>اسم الموظف</th>
-                  <th data-key='join_date'>تاريخ الانضمام</th>
                   <th data-key='outlet'>المعرض</th>
                   <th data-key='total_sales'>المبيعات</th>
                   <th data-key='avg_sales'>متوسط المبيعات الشهرية</th>
-                  <th data-key='salary'>الراتب</th>
                   <th data-key='years_of_service'>سنوات الخدمة</th>
+                  <th data-key='salary'>الراتب</th>
                   <th data-key='commissions'>العمولات</th>
                   <th data-key='average_income'>متوسط الدخل الشهري</th>
                 </tr>
@@ -161,7 +168,7 @@
             </table>
           </div>
         </div>`;
-
+      
       document.querySelectorAll('th').forEach(th => {
         th.addEventListener('click', () => {
           const key = th.dataset.key;
@@ -193,34 +200,50 @@
       };
     }
 
-    function sortTable(table, key) {
-      const tbody = table.querySelector('tbody');
-      const rows = Array.from(tbody.querySelectorAll('tr'));
-      const headerIndex = Array.from(table.querySelectorAll('th')).findIndex(th => th.dataset.key === key);
-      const isNumeric = ['total_sales', 'avg_sales', 'salary', 'commissions', 'average_income'].includes(key);
-      const isDate = key === 'join_date';
+ function sortTable(table, key) {
+  const tbody = table.querySelector('tbody');
+  const rows = Array.from(tbody.querySelectorAll('tr'));
+  const headerIndex = Array.from(table.querySelectorAll('th')).findIndex(th => th.dataset.key === key);
+  const isNumeric = ['total_sales', 'avg_sales', 'salary', 'commissions', 'average_income'].includes(key);
 
-      let direction = table.dataset.sorted === key && table.dataset.direction === 'asc' ? 'desc' : 'asc';
-      table.dataset.sorted = key;
-      table.dataset.direction = direction;
+  let direction = table.dataset.sorted === key && table.dataset.direction === 'asc' ? 'desc' : 'asc';
+  table.dataset.sorted = key;
+  table.dataset.direction = direction;
 
-      rows.sort((a, b) => {
-        let valA = a.children[headerIndex].textContent.trim().replace(/,/g, '');
-        let valB = b.children[headerIndex].textContent.trim().replace(/,/g, '');
-        if (isDate) {
-          const dateA = new Date(valA);
-          const dateB = new Date(valB);
-          return direction === 'asc' ? dateA - dateB : dateB - dateA;
-        }
-        if (isNumeric) {
-          return direction === 'asc' ? parseFloat(valA) - parseFloat(valB) : parseFloat(valB) - parseFloat(valA);
-        }
-        return direction === 'asc' ? valA.localeCompare(valB, 'ar') : valB.localeCompare(valA, 'ar');
-      });
+  rows.sort((a, b) => {
+    const valA = a.children[headerIndex].textContent.trim();
+    const valB = b.children[headerIndex].textContent.trim();
 
-      tbody.innerHTML = '';
-      rows.forEach(r => tbody.appendChild(r));
+    let numA, numB;
+
+    if (key === 'years_of_service') {
+      // 🔹 التعامل مع جميع الصيغ: "19 سنة و9 شهور" أو "19 g 9 شهور" أو "19 شهر"
+      const parseYearsMonths = (val) => {
+        const cleaned = val.replace(/[^\d\s]/g, ' '); // نحذف أي رموز غريبة مثل g
+        const parts = cleaned.trim().split(/\s+/).map(Number).filter(n => !isNaN(n));
+        const years = parts[0] || 0;
+        const months = parts[1] || 0;
+        return years * 12 + months;
+      };
+      numA = parseYearsMonths(valA);
+      numB = parseYearsMonths(valB);
+    } 
+    else if (isNumeric) {
+      numA = parseFloat(valA.replace(/,/g, '')) || 0;
+      numB = parseFloat(valB.replace(/,/g, '')) || 0;
+    } 
+    else {
+      return direction === 'asc' 
+        ? valA.localeCompare(valB, 'ar') 
+        : valB.localeCompare(valA, 'ar');
     }
+
+    return direction === 'asc' ? numA - numB : numB - numA;
+  });
+
+  tbody.innerHTML = '';
+  rows.forEach(r => tbody.appendChild(r));
+}
 
     function formatNumber(num) {
       const n = parseFloat(num) || 0;
