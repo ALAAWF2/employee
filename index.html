@@ -87,18 +87,14 @@
         managerFilter.appendChild(opt);
       });
 
-      managerFilter.addEventListener('change', () => {
+      const updateView = () => {
         const selectedManager = managerFilter.value;
         const selectedRoles = getSelectedRoles();
         displayManagerSections(employeesByStore, managers, selectedManager, selectedRoles);
-      });
+      };
 
-      roleContainer.addEventListener('change', () => {
-        const selectedManager = managerFilter.value;
-        const selectedRoles = getSelectedRoles();
-        displayManagerSections(employeesByStore, managers, selectedManager, selectedRoles);
-      });
-
+      managerFilter.addEventListener('change', updateView);
+      roleContainer.addEventListener('change', updateView);
       displayManagerSections(employeesByStore, managers);
     }
 
@@ -109,67 +105,62 @@
     function displayManagerSections(employeesByStore, managers, selectedManager='all', selectedRoles=[]) {
       container.innerHTML = '';
 
-      for (const [manager, outlets] of Object.entries(managers)) {
-        if (selectedManager !== 'all' && manager !== selectedManager) continue;
-
-        let managerHTML = `<h2 class='text-2xl font-bold text-indigo-700 mb-4 border-b-2 border-indigo-200 pb-2'>${manager}</h2>`;
-
-        outlets.forEach(outletName => {
-          const norm = normalizeName(outletName);
-          const storeData = employeesByStore[norm];
-          if (!storeData || !storeData.employees.length) return;
-
-          let rows = '';
-          storeData.employees.forEach(emp => {
-            if (selectedRoles.length > 0 && !selectedRoles.includes(emp.title)) return;
-
-            const { avg, monthsWorked, fromMonth, toMonth } = calculateAvgSales(emp.total_sales, emp.join_date);
-            const tooltip = `Calculated based on ${monthsWorked} months (from ${fromMonth} to ${toMonth})`;
-
-            rows += `
-              <tr>
-                <td>${emp.name}</td>
-                <td>${emp.join_date}</td>
-                <td>${emp.outlet}</td>
-                <td>${formatNumber(emp.total_sales)}</td>
-                <td title="${tooltip}">${formatNumber(avg)}</td>
-                <td>${formatNumber(emp.salary)}</td>
-                <td>${emp.years_of_service}</td>
-                <td>${formatNumber(emp.commissions)}</td>
-                <td>${formatNumber(emp.average_income)}</td>
-              </tr>`;
-          });
-
-          if (!rows.trim()) return;
-
-          managerHTML += `
-            <div class='bg-white shadow-md rounded-lg p-4 mb-8'>
-              <div class='flex justify-between items-center mb-3'>
-                <h3 class='text-lg font-bold text-gray-800'>${storeData.original_name}</h3>
-              </div>
-              <div class='overflow-x-auto'>
-                <table class='w-full text-sm text-gray-700'>
-                  <thead>
-                    <tr>
-                      <th data-key='name'>اسم الموظف</th>
-                      <th data-key='join_date'>تاريخ الانضمام</th>
-                      <th data-key='outlet'>المعرض</th>
-                      <th data-key='total_sales'>المبيعات</th>
-                      <th data-key='avg_sales'>متوسط المبيعات الشهرية</th>
-                      <th data-key='salary'>الراتب</th>
-                      <th data-key='years_of_service'>سنوات الخدمة</th>
-                      <th data-key='commissions'>العمولات</th>
-                      <th data-key='average_income'>متوسط الدخل الشهري</th>
-                    </tr>
-                  </thead>
-                  <tbody>${rows}</tbody>
-                </table>
-              </div>
-            </div>`;
+      let allEmployees = [];
+      for (const [_, storeData] of Object.entries(employeesByStore)) {
+        storeData.employees.forEach(emp => {
+          if (selectedRoles.length > 0 && !selectedRoles.includes(emp.title)) return;
+          if (selectedManager !== 'all' && emp.manager !== selectedManager) return;
+          const { avg, monthsWorked, fromMonth, toMonth } = calculateAvgSales(emp.total_sales, emp.join_date);
+          const tooltip = `Calculated based on ${monthsWorked} months (from ${fromMonth} to ${toMonth})`;
+          allEmployees.push({ ...emp, avg, tooltip });
         });
-
-        container.innerHTML += managerHTML;
       }
+
+      if (!allEmployees.length) {
+        container.innerHTML = `<p class='text-center text-gray-500 mt-8'>لا توجد بيانات مطابقة</p>`;
+        return;
+      }
+
+      let rows = allEmployees.map(emp => `
+        <tr>
+          <td>${emp.name}</td>
+          <td>${emp.join_date}</td>
+          <td>${emp.outlet}</td>
+          <td>${formatNumber(emp.total_sales)}</td>
+          <td title="${emp.tooltip}">${formatNumber(emp.avg)}</td>
+          <td>${formatNumber(emp.salary)}</td>
+          <td>${emp.years_of_service}</td>
+          <td>${formatNumber(emp.commissions)}</td>
+          <td>${formatNumber(emp.average_income)}</td>
+        </tr>`).join('');
+
+      container.innerHTML = `
+        <div class='bg-white shadow-md rounded-lg p-4'>
+          <div class='flex justify-between items-center mb-3'>
+            <h3 class='text-lg font-bold text-gray-800'>
+              ${selectedManager === "all" ? "جميع الموظفين" : selectedManager}
+            </h3>
+            <span class='text-gray-500 text-sm'>عدد الموظفين: ${allEmployees.length}</span>
+          </div>
+          <div class='overflow-x-auto'>
+            <table class='w-full text-sm text-gray-700'>
+              <thead>
+                <tr>
+                  <th data-key='name'>اسم الموظف</th>
+                  <th data-key='join_date'>تاريخ الانضمام</th>
+                  <th data-key='outlet'>المعرض</th>
+                  <th data-key='total_sales'>المبيعات</th>
+                  <th data-key='avg_sales'>متوسط المبيعات الشهرية</th>
+                  <th data-key='salary'>الراتب</th>
+                  <th data-key='years_of_service'>سنوات الخدمة</th>
+                  <th data-key='commissions'>العمولات</th>
+                  <th data-key='average_income'>متوسط الدخل الشهري</th>
+                </tr>
+              </thead>
+              <tbody>${rows}</tbody>
+            </table>
+          </div>
+        </div>`;
 
       document.querySelectorAll('th').forEach(th => {
         th.addEventListener('click', () => {
@@ -182,34 +173,24 @@
 
     function calculateAvgSales(totalSales, joinDateStr) {
       if (!totalSales) return { avg: 0, monthsWorked: 0, fromMonth: "-", toMonth: "-" };
-      try {
-        const totalMonths = 9; // Jan to Sep 2025
-        const joinDate = new Date(joinDateStr);
-        if (isNaN(joinDate)) return { avg: totalSales / totalMonths, monthsWorked: 9, fromMonth: "January", toMonth: "September" };
+      const joinDate = new Date(joinDateStr);
+      const startOfYear = new Date('2025-01-01');
+      const endOfData = new Date('2025-09-30');
+      let effectiveStart = joinDate > startOfYear ? joinDate : startOfYear;
 
-        const startOfYear = new Date('2025-01-01');
-        const endOfData = new Date('2025-09-30');
-        let effectiveStart = joinDate > startOfYear ? joinDate : startOfYear;
+      let monthsWorked = (endOfData.getFullYear() - effectiveStart.getFullYear()) * 12 + (endOfData.getMonth() - effectiveStart.getMonth()) + 1;
+      if (monthsWorked < 1) monthsWorked = 1;
+      if (monthsWorked > 9) monthsWorked = 9;
 
-        let monthsWorked =
-          (endOfData.getFullYear() - effectiveStart.getFullYear()) * 12 +
-          (endOfData.getMonth() - effectiveStart.getMonth()) + 1;
+      const fromMonth = effectiveStart.toLocaleString('en-US', { month: 'long' });
+      const toMonth = endOfData.toLocaleString('en-US', { month: 'long' });
 
-        if (monthsWorked < 1) monthsWorked = 1;
-        if (monthsWorked > 9) monthsWorked = 9;
-
-        const fromMonth = effectiveStart.toLocaleString('en-US', { month: 'long' });
-        const toMonth = endOfData.toLocaleString('en-US', { month: 'long' });
-
-        return {
-          avg: totalSales / monthsWorked,
-          monthsWorked,
-          fromMonth,
-          toMonth
-        };
-      } catch {
-        return { avg: totalSales / 9, monthsWorked: 9, fromMonth: "January", toMonth: "September" };
-      }
+      return {
+        avg: totalSales / monthsWorked,
+        monthsWorked,
+        fromMonth,
+        toMonth
+      };
     }
 
     function sortTable(table, key) {
@@ -217,27 +198,23 @@
       const rows = Array.from(tbody.querySelectorAll('tr'));
       const headerIndex = Array.from(table.querySelectorAll('th')).findIndex(th => th.dataset.key === key);
       const isNumeric = ['total_sales', 'avg_sales', 'salary', 'commissions', 'average_income'].includes(key);
+      const isDate = key === 'join_date';
 
-      let direction = 'asc';
-      if (table.dataset.sorted === key && table.dataset.direction === 'asc') direction = 'desc';
-      else if (table.dataset.sorted === key && table.dataset.direction === 'desc') {
-        table.dataset.sorted = '';
-        table.dataset.direction = '';
-        rows.sort((a, b) => 0);
-        tbody.innerHTML = '';
-        rows.forEach(r => tbody.appendChild(r));
-        return;
-      }
-
+      let direction = table.dataset.sorted === key && table.dataset.direction === 'asc' ? 'desc' : 'asc';
       table.dataset.sorted = key;
       table.dataset.direction = direction;
 
       rows.sort((a, b) => {
-        const valA = a.children[headerIndex].textContent.trim().replace(/,/g, '');
-        const valB = a.children[headerIndex].textContent.trim().replace(/,/g, '');
-        const numA = parseFloat(valA) || 0;
-        const numB = parseFloat(valB) || 0;
-        if (isNumeric) return direction === 'asc' ? numA - numB : numB - numA;
+        let valA = a.children[headerIndex].textContent.trim().replace(/,/g, '');
+        let valB = b.children[headerIndex].textContent.trim().replace(/,/g, '');
+        if (isDate) {
+          const dateA = new Date(valA);
+          const dateB = new Date(valB);
+          return direction === 'asc' ? dateA - dateB : dateB - dateA;
+        }
+        if (isNumeric) {
+          return direction === 'asc' ? parseFloat(valA) - parseFloat(valB) : parseFloat(valB) - parseFloat(valA);
+        }
         return direction === 'asc' ? valA.localeCompare(valB, 'ar') : valB.localeCompare(valA, 'ar');
       });
 
@@ -248,11 +225,6 @@
     function formatNumber(num) {
       const n = parseFloat(num) || 0;
       return new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 }).format(n);
-    }
-
-    function normalizeName(name) {
-      if (!name) return '';
-      return name.toLowerCase().trim().replace(/[-_]/g, ' ').replace(/\s+/g, ' ');
     }
 
     document.addEventListener('DOMContentLoaded', initializeDashboard);
