@@ -7,54 +7,70 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
-    body { font-family:'Cairo',sans-serif; background:#f7fafc; }
-   table { 
-  width: 100%; 
-  border-collapse: collapse; 
-  table-layout: fixed;       /* يوزع الأعمدة بالتساوي داخل العرض المتاح */
-}
-
-th, td { 
-  padding: 8px 6px;          /* تقليل المسافة قليلاً */
-  border-bottom: 1px solid #e5e7eb; 
-  text-align: center; 
-  vertical-align: middle; 
-  font-size: 0.9rem;         /* تصغير بسيط للخط */
-  white-space: normal;       /* يسمح بتعدد الأسطر في النص */
-  word-wrap: break-word;     /* يكسر الكلمات الطويلة داخل الخلايا */
-}
-
-    th, td { 
-      padding:10px; 
-      border-bottom:1px solid #e5e7eb; 
-      text-align:center; 
-      vertical-align:middle;
-      white-space:nowrap; 
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: #f7fafc;
     }
-    th { 
-      background:#f1f5f9; 
-      cursor:pointer; 
-      user-select:none;
-      font-weight:700;
+
+    /* ===== الجدول ===== */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
     }
-    tr:hover { background:#f9fafb; }
-    label { cursor:pointer; }
+
+    th, td {
+      padding: 10px 8px;
+      border-bottom: 1px solid #e5e7eb;
+      text-align: center;
+      vertical-align: middle;
+      font-size: 0.9rem;
+      white-space: normal;
+      word-break: break-word;
+      overflow: hidden;
+    }
+
+    th {
+      background: #f1f5f9;
+      cursor: pointer;
+      user-select: none;
+      font-weight: 700;
+    }
+
+    tr:hover {
+      background: #f9fafb;
+    }
+
+    label {
+      cursor: pointer;
+    }
+
+    /* ===== التلميحات (Tooltips) ===== */
     td[title] {
       position: relative;
     }
+
     td[title]:hover::after {
       content: attr(title);
       position: absolute;
       right: 50%;
       bottom: 100%;
       transform: translateX(50%) translateY(-4px);
-      background: rgba(0,0,0,0.75);
+      background: rgba(0, 0, 0, 0.75);
       color: #fff;
       padding: 5px 8px;
       border-radius: 6px;
       font-size: 0.75rem;
       white-space: nowrap;
       z-index: 10;
+    }
+
+    /* ===== جعل رؤوس الأعمدة ثابتة ===== */
+    thead th {
+      position: sticky;
+      top: 0;
+      background: #f1f5f9;
+      z-index: 5;
     }
   </style>
 </head>
@@ -186,8 +202,7 @@ th, td {
             </h3>
             <span class='text-gray-500 text-sm'>عدد الموظفين: ${allEmployees.length}</span>
           </div>
-          <div class='w-full overflow-visible'>
-
+          <div class='w-full overflow-x-auto'>
             <table class='w-full text-sm text-gray-700 text-center'>
               <thead>
                 <tr>
