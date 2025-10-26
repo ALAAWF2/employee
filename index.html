@@ -154,12 +154,12 @@
             <td>${emp.name}</td>
             <td>${emp.outlet}</td>
             <td>${formatNumber(emp.total_sales)}</td>
+            <td title="نسبة مساهمة الموظف في مبيعات المعرض">${sharePct.toFixed(1)}%</td>
             <td title="${emp.tooltip}">${formatNumber(emp.avg)}</td>
             <td title="تاريخ الانضمام: ${emp.join_date || '-'}">${emp.years_of_service}</td>
             <td>${formatNumber(emp.salary)}</td>
             <td>${formatNumber(emp.commissions)}</td>
             <td title="الراتب + (العمولات ÷ ${monthsForCalc})">${formatNumber(avgIncome)}</td>
-            <td title="نسبة مساهمة الموظف في مبيعات المعرض">${sharePct.toFixed(1)}%</td>
           </tr>`;
       }).join('');
 
@@ -178,12 +178,12 @@
                   <th data-key='name'>اسم الموظف</th>
                   <th data-key='outlet'>المعرض</th>
                   <th data-key='total_sales'>المبيعات</th>
+                  <th data-key='sales_share'>حصة المبيعات من المعرض (%)</th>
                   <th data-key='avg_sales'>متوسط المبيعات الشهرية</th>
                   <th data-key='years_of_service'>سنوات الخدمة</th>
                   <th data-key='salary'>الراتب</th>
                   <th data-key='commissions'>العمولات</th>
                   <th data-key='average_income'>متوسط الدخل الشهري</th>
-                  <th data-key='sales_share'>حصة المبيعات من المعرض (%)</th>
                 </tr>
               </thead>
               <tbody>${rows}</tbody>
