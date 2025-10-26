@@ -145,6 +145,17 @@
     function displayManagerSections(employeesByStore, managers, selectedManager='all', selectedRoles=[]) {
       container.innerHTML = '';
 
+            // 🔹 أولاً نحسب إجمالي المبيعات لكل معرض بدون أي فلترة
+      const outletTotals = {};
+      for (const [_, storeData] of Object.entries(employeesByStore)) {
+        storeData.employees.forEach(emp => {
+          const sales = parseFloat(emp.total_sales) || 0;
+          if (!outletTotals[emp.outlet]) outletTotals[emp.outlet] = 0;
+          outletTotals[emp.outlet] += sales;
+        });
+      }
+
+      // 🔹 بعدين نطبق الفلاتر ونحسب باقي البيانات
       let allEmployees = [];
       for (const [_, storeData] of Object.entries(employeesByStore)) {
         storeData.employees.forEach(emp => {
@@ -161,12 +172,6 @@
         return;
       }
 
-      // 🔹 حساب إجمالي المبيعات لكل معرض
-      const outletTotals = {};
-      for (const emp of allEmployees) {
-        if (!outletTotals[emp.outlet]) outletTotals[emp.outlet] = 0;
-        outletTotals[emp.outlet] += parseFloat(emp.total_sales) || 0;
-      }
 
       // 🔹 بناء الصفوف
       let rows = allEmployees.map(emp => {
