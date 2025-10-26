@@ -12,8 +12,8 @@
     th, td { 
       padding:10px; 
       border-bottom:1px solid #e5e7eb; 
-      text-align:center;       /* 🔹 يجعل النص في المنتصف أفقيًا */
-      vertical-align:middle;   /* 🔹 يجعل النص في المنتصف عموديًا */
+      text-align:center; 
+      vertical-align:middle;
       white-space:nowrap; 
     }
     th { 
@@ -121,7 +121,7 @@
           if (selectedManager !== 'all' && emp.manager !== selectedManager) return;
           const { avg, monthsWorked, fromMonth, toMonth } = calculateAvgSales(emp.total_sales, emp.join_date);
           const tooltip = `Calculated based on ${monthsWorked} months (from ${fromMonth} to ${toMonth})`;
-          allEmployees.push({ ...emp, avg, tooltip });
+          allEmployees.push({ ...emp, avg, monthsWorked, tooltip });
         });
       }
 
@@ -130,34 +130,38 @@
         return;
       }
 
-     let rows = allEmployees.map(emp => {
-  const { avg, monthsWorked, fromMonth, toMonth } = calculateAvgSales(emp.total_sales, emp.join_date);
-  const tooltip = `Calculated based on ${monthsWorked} months (from ${fromMonth} to ${toMonth})`;
+      // 🔹 حساب إجمالي المبيعات لكل معرض
+      const outletTotals = {};
+      for (const emp of allEmployees) {
+        if (!outletTotals[emp.outlet]) outletTotals[emp.outlet] = 0;
+        outletTotals[emp.outlet] += parseFloat(emp.total_sales) || 0;
+      }
 
-  // 🔹 تحديد عدد الشهور بناءً على سنة الانضمام
-  const joinDate = new Date(emp.join_date);
-  let monthsForCalc = joinDate < new Date('2025-01-01') ? 9 : monthsWorked;
-  if (!monthsForCalc || monthsForCalc < 1) monthsForCalc = 1;
+      // 🔹 بناء الصفوف
+      let rows = allEmployees.map(emp => {
+        const joinDate = new Date(emp.join_date);
+        let monthsForCalc = joinDate < new Date('2025-01-01') ? 9 : emp.monthsWorked;
+        if (!monthsForCalc || monthsForCalc < 1) monthsForCalc = 1;
 
-  // 🔹 حساب متوسط العمولات الشهري بناءً على مدة العمل الفعلية
-  const avgCommission = emp.commissions ? emp.commissions / monthsForCalc : 0;
+        const avgCommission = emp.commissions ? emp.commissions / monthsForCalc : 0;
+        const avgIncome = (parseFloat(emp.salary) || 0) + avgCommission;
 
-  // 🔹 حساب متوسط الدخل الشهري = الراتب + متوسط العمولات
-  const avgIncome = (parseFloat(emp.salary) || 0) + avgCommission;
+        const outletTotal = outletTotals[emp.outlet] || 1;
+        const sharePct = (emp.total_sales / outletTotal) * 100;
 
-  return `
-    <tr>
-      <td>${emp.name}</td>
-      <td>${emp.outlet}</td>
-      <td>${formatNumber(emp.total_sales)}</td>
-      <td title="${tooltip}">${formatNumber(emp.avg)}</td>
-      <td title="تاريخ الانضمام: ${emp.join_date || '-'}">${emp.years_of_service}</td>
-      <td>${formatNumber(emp.salary)}</td>
-      <td>${formatNumber(emp.commissions)}</td>
-      <td title="الراتب + (العمولات ÷ ${monthsForCalc})">${formatNumber(avgIncome)}</td>
-    </tr>`;
-}).join('');
-
+        return `
+          <tr>
+            <td>${emp.name}</td>
+            <td>${emp.outlet}</td>
+            <td>${formatNumber(emp.total_sales)}</td>
+            <td title="${emp.tooltip}">${formatNumber(emp.avg)}</td>
+            <td title="تاريخ الانضمام: ${emp.join_date || '-'}">${emp.years_of_service}</td>
+            <td>${formatNumber(emp.salary)}</td>
+            <td>${formatNumber(emp.commissions)}</td>
+            <td title="الراتب + (العمولات ÷ ${monthsForCalc})">${formatNumber(avgIncome)}</td>
+            <td title="نسبة مساهمة الموظف في مبيعات المعرض">${sharePct.toFixed(1)}%</td>
+          </tr>`;
+      }).join('');
 
       container.innerHTML = `
         <div class='bg-white shadow-md rounded-lg p-4'>
@@ -179,13 +183,14 @@
                   <th data-key='salary'>الراتب</th>
                   <th data-key='commissions'>العمولات</th>
                   <th data-key='average_income'>متوسط الدخل الشهري</th>
+                  <th data-key='sales_share'>حصة المبيعات من المعرض (%)</th>
                 </tr>
               </thead>
               <tbody>${rows}</tbody>
             </table>
           </div>
         </div>`;
-      
+
       document.querySelectorAll('th').forEach(th => {
         th.addEventListener('click', () => {
           const key = th.dataset.key;
@@ -209,58 +214,50 @@
       const fromMonth = effectiveStart.toLocaleString('en-US', { month: 'long' });
       const toMonth = endOfData.toLocaleString('en-US', { month: 'long' });
 
-      return {
-        avg: totalSales / monthsWorked,
-        monthsWorked,
-        fromMonth,
-        toMonth
-      };
+      return { avg: totalSales / monthsWorked, monthsWorked, fromMonth, toMonth };
     }
 
- function sortTable(table, key) {
-  const tbody = table.querySelector('tbody');
-  const rows = Array.from(tbody.querySelectorAll('tr'));
-  const headerIndex = Array.from(table.querySelectorAll('th')).findIndex(th => th.dataset.key === key);
-  const isNumeric = ['total_sales', 'avg_sales', 'salary', 'commissions', 'average_income'].includes(key);
+    function sortTable(table, key) {
+      const tbody = table.querySelector('tbody');
+      const rows = Array.from(tbody.querySelectorAll('tr'));
+      const headerIndex = Array.from(table.querySelectorAll('th')).findIndex(th => th.dataset.key === key);
+      const isNumeric = ['total_sales', 'avg_sales', 'salary', 'commissions', 'average_income', 'sales_share'].includes(key);
 
-  let direction = table.dataset.sorted === key && table.dataset.direction === 'asc' ? 'desc' : 'asc';
-  table.dataset.sorted = key;
-  table.dataset.direction = direction;
+      let direction = table.dataset.sorted === key && table.dataset.direction === 'asc' ? 'desc' : 'asc';
+      table.dataset.sorted = key;
+      table.dataset.direction = direction;
 
-  rows.sort((a, b) => {
-    const valA = a.children[headerIndex].textContent.trim();
-    const valB = b.children[headerIndex].textContent.trim();
+      rows.sort((a, b) => {
+        const valA = a.children[headerIndex].textContent.trim().replace('%','');
+        const valB = b.children[headerIndex].textContent.trim().replace('%','');
 
-    let numA, numB;
+        let numA, numB;
 
-    if (key === 'years_of_service') {
-      // 🔹 التعامل مع جميع الصيغ: "19 سنة و9 شهور" أو "19 g 9 شهور" أو "19 شهر"
-      const parseYearsMonths = (val) => {
-        const cleaned = val.replace(/[^\d\s]/g, ' '); // نحذف أي رموز غريبة مثل g
-        const parts = cleaned.trim().split(/\s+/).map(Number).filter(n => !isNaN(n));
-        const years = parts[0] || 0;
-        const months = parts[1] || 0;
-        return years * 12 + months;
-      };
-      numA = parseYearsMonths(valA);
-      numB = parseYearsMonths(valB);
-    } 
-    else if (isNumeric) {
-      numA = parseFloat(valA.replace(/,/g, '')) || 0;
-      numB = parseFloat(valB.replace(/,/g, '')) || 0;
-    } 
-    else {
-      return direction === 'asc' 
-        ? valA.localeCompare(valB, 'ar') 
-        : valB.localeCompare(valA, 'ar');
+        if (key === 'years_of_service') {
+          const parseYearsMonths = (val) => {
+            const cleaned = val.replace(/[^\d\s]/g, ' ');
+            const parts = cleaned.trim().split(/\s+/).map(Number).filter(n => !isNaN(n));
+            const years = parts[0] || 0;
+            const months = parts[1] || 0;
+            return years * 12 + months;
+          };
+          numA = parseYearsMonths(valA);
+          numB = parseYearsMonths(valB);
+        } 
+        else if (isNumeric) {
+          numA = parseFloat(valA.replace(/,/g, '')) || 0;
+          numB = parseFloat(valB.replace(/,/g, '')) || 0;
+        } 
+        else {
+          return direction === 'asc' ? valA.localeCompare(valB, 'ar') : valB.localeCompare(valA, 'ar');
+        }
+
+        return direction === 'asc' ? numA - numB : numB - numA;
+      });
+
+      tbody.innerHTML = '';
+      rows.forEach(r => tbody.appendChild(r));
     }
-
-    return direction === 'asc' ? numA - numB : numB - numA;
-  });
-
-  tbody.innerHTML = '';
-  rows.forEach(r => tbody.appendChild(r));
-}
 
     function formatNumber(num) {
       const n = parseFloat(num) || 0;
