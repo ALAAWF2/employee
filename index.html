@@ -130,17 +130,31 @@
         return;
       }
 
-      let rows = allEmployees.map(emp => `
-        <tr>
-          <td>${emp.name}</td>
-          <td>${emp.outlet}</td>
-          <td>${formatNumber(emp.total_sales)}</td>
-          <td title="${emp.tooltip}">${formatNumber(emp.avg)}</td>
-          <td title="تاريخ الانضمام: ${emp.join_date || '-'}">${emp.years_of_service}</td>
-          <td>${formatNumber(emp.salary)}</td>
-          <td>${formatNumber(emp.commissions)}</td>
-          <td>${formatNumber(emp.average_income)}</td>
-        </tr>`).join('');
+     let rows = allEmployees.map(emp => {
+  const { avg, monthsWorked, fromMonth, toMonth } = calculateAvgSales(emp.total_sales, emp.join_date);
+  const tooltip = `Calculated based on ${monthsWorked} months (from ${fromMonth} to ${toMonth})`;
+
+  // 🔹 حساب متوسط العمولات الشهري بناءً على مدة العمل الفعلية
+  let monthsForCalc = monthsWorked;
+  if (!monthsForCalc || monthsForCalc < 1) monthsForCalc = 1;
+  const avgCommission = emp.commissions ? emp.commissions / monthsForCalc : 0;
+
+  // 🔹 حساب متوسط الدخل الشهري = الراتب + متوسط العمولات
+  const avgIncome = (parseFloat(emp.salary) || 0) + avgCommission;
+
+  return `
+    <tr>
+      <td>${emp.name}</td>
+      <td>${emp.outlet}</td>
+      <td>${formatNumber(emp.total_sales)}</td>
+      <td title="${tooltip}">${formatNumber(emp.avg)}</td>
+      <td title="تاريخ الانضمام: ${emp.join_date || '-'}">${emp.years_of_service}</td>
+      <td>${formatNumber(emp.salary)}</td>
+      <td>${formatNumber(emp.commissions)}</td>
+      <td>${formatNumber(avgIncome)}</td>
+    </tr>`;
+}).join('');
+
 
       container.innerHTML = `
         <div class='bg-white shadow-md rounded-lg p-4'>
