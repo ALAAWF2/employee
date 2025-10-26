@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 """
-converter_employees_v2_clean.py
+converter_employees_v3_with_monthly_data.py
 إعداد: علاء وفائي 🟧
 الغرض: تحويل بيانات الموظفين والفروع إلى ملف JSON متكامل
-        مع تنظيف القيم غير الصالحة (NaN, None, inf) وضمان صياغة واقعية لسنوات الخدمة.
+        مع قراءة المبيعات والعمولات الشهرية وحساب متوسط الدخل الشهري بدقة.
 """
 
 import pandas as pd
@@ -67,7 +67,7 @@ def safe_float(value):
 
 # =====================================================
 def clean_data(obj):
-    """تنظيف القيم غير الصالحة داخل dict أو list في أي عمق"""
+    """تنظيف القيم غير الصالحة داخل dict أو list"""
     if isinstance(obj, dict):
         return {k: clean_data(v) for k, v in obj.items()}
     elif isinstance(obj, list):
@@ -122,10 +122,19 @@ def process():
             title = str(row.get("المسمى الوظيفي", "")).strip()
             join_date = str(row.get("join date", "")).strip()
             years_of_service = calculate_years_of_service(join_date)
-            sales = safe_float(row.get("sales", 0))
+
+            total_sales = safe_float(row.get("total sales", 0))
             salary = safe_float(row.get("salary", 0))
-            commissions = safe_float(row.get("العمولات", 0))
-            avg_income = salary + commissions
+            total_commission = safe_float(row.get("total commission", 0))
+
+            # المبيعات والعمولات الشهرية (sales-1..sales-9 , commission-1..commission-9)
+            monthly_sales = [safe_float(row.get(f"sales-{i}", 0)) for i in range(1, 10)]
+            monthly_commissions = [safe_float(row.get(f"commission-{i}", 0)) for i in range(1, 10)]
+
+            # حساب متوسط العمولات الشهرية الفعّالة فقط
+            months_count = len([v for v in monthly_commissions if v > 0]) or 9
+            avg_monthly_comm = sum(monthly_commissions) / months_count
+            average_income = salary + avg_monthly_comm
 
             # البحث عن المدير بناءً على المعرض
             manager_name = ""
@@ -143,9 +152,11 @@ def process():
                 "join_date": join_date,
                 "years_of_service": years_of_service,
                 "salary": salary,
-                "commissions": commissions,
-                "total_sales": sales,
-                "average_income": avg_income
+                "total_commission": total_commission,
+                "total_sales": total_sales,
+                "monthly_sales": monthly_sales,
+                "monthly_commissions": monthly_commissions,
+                "average_income": average_income
             })
             total_employees += 1
 
