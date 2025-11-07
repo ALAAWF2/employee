@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>لوحة بيانات الموظفين المتطورة</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet" />
+  
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <!-- jsPDF for PDF export -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  
+  <!-- SheetJS for Excel export -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  
+  <style>
+    :root {
+      --bg-primary: #fff7ed; /* Light Orange-50 */
+      --bg-secondary: #ffffff;
+      --text-primary: #1a202c;
+      --text-secondary: #718096;
+      --border-color: #e5e7eb;
+      --hover-color: #fefce8; /* Light Yellow/Orange hover */
+      --primary-color: #ea580c; /* Orange-600 */
+      --success-color: #10b981;
+      --warning-color: #f59e0b;
+      --danger-color: #ef4444;
+    }
+    
+    body.dark {
+      --bg-primary: #1a202c; /* Dark background */
+      --bg-secondary: #ffffff; /* FORCE WHITE CONTAINERS */
+      --text-primary: #f7fafc; /* Primary text on dark bg */
+      --text-secondary: #cbd5e0;
+      --border-color: #4a5568;
+      --hover-color: #fefce8; /* Keep light hover */
+    }
+    
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      transition: all 0.3s ease;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+    
+    th, td {
+      padding: 12px 8px;
+      border-bottom: 1px solid var(--border-color);
+      text-align: center;
+      vertical-align: middle;
+      font-size: 0.9rem;
+      white-space: normal;
+      word-break: break-word;
+      overflow: hidden;
+      /* Text color for containers */
+      color: #1a202c; /* Force dark text even in dark mode for white containers */
+    }
+    
+    th {
+      background: var(--bg-secondary);
+      cursor: pointer;
+      user-select: none;
+      font-weight: 700;
+      position: sticky;
+      top: 0;
+      z-index: 5;
+    }
+    
+    tr:hover {
+      background: var(--hover-color);
+    }
+    
+    label {
+      cursor: pointer;
+    }
+    
+    /* Tooltips */
+    td[title] {
+      position: relative;
+    }
+    
+    td[title]:hover::after {
+      content: attr(title);
+      position: absolute;
+      right: 50%;
+      bottom: 100%;
+      transform: translateX(50%) translateY(-4px);
+      background: rgba(0, 0, 0, 0.75);
+      color: #fff;
+      padding: 5px 8px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      white-space: nowrap;
+      z-index: 10;
+    }
+    
+    /* Modal */
+    #employeeModal {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0,0,0,0.5);
+      z-index: 50;
+    }
+    
+    #employeeModal.active {
+      display: flex;
+    }
+    
+    /* Skeleton Loading */
+    .skeleton {
+      background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+      background-size: 200% 100%;
+      animation: loading 1.5s infinite;
+    }
+    
+    @keyframes loading {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+    
+    /* Notification Toast */
+    .toast {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 12px 16px;
+      border-radius: 8px;
+      color: white;
+      font-weight: bold;
+      z-index: 100;
+      transform: translateX(400px);
+      transition: transform 0.3s ease;
+    }
+    
+    .toast.show {
+      transform: translateX(0);
+    }
+    
+    /* Progress Circle */
+    .progress-circle {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: white;
+    }
+    
+    /* Performance Colors (No longer used in table, but kept for potential future use) */
+    .performance-high {
+      background-color: rgba(16, 185, 129, 0.1);
+      color: var(--success-color);
+    }
+    
+    .performance-medium {
+      background-color: rgba(245, 158, 11, 0.1);
+      color: var(--warning-color);
+    }
+    
+    .performance-low {
+      background-color: rgba(239, 68, 68, 0.1);
+      color: var(--danger-color);
+    }
+    
+    /* Compare Button */
+    #compare-btn {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      display: none;
+      z-index: 30;
+    }
+    
+    #compare-btn.show {
+      display: block;
+    }
+
+    /* Ensure dark mode text is readable on light bg */
+    body.dark .dark\:text-gray-300 {
+        color: #4a5568; /* Gray-600 for text */
+    }
+    body.dark .dark\:text-gray-400 {
+        color: #718096; /* Gray-500 for secondary text */
+    }
+    body.dark .dark\:text-indigo-400 {
+        color: #ea580c; /* Orange-600 */
+    }
+    body.dark .dark\:text-orange-400 {
+        color: #c2410c; /* Orange-700 */
+    }
+    body.dark .dark\:text-orange-300 {
+        color: #c2410c; /* Orange-700 */
+    }
+  </style>
+</head>
+<body class="p-6">
+  <!-- Theme Toggle -->
+  <button id="theme-toggle" class="fixed top-4 left-4 p-3 rounded-full bg-gray-800 text-white dark:bg-yellow-400 dark:text-gray-900 transition-all">
+    🌙
+  </button>
+  
+  <header class="mb-8 text-center">
+    <h1 class="text-3xl md:text-4xl font-bold mb-2 bg-gradient-to-r from-orange-500 to-orange-700 bg-clip-text text-transparent">
+      لوحة بيانات الموظفين المتطورة
+    </h1>
+    <p class="text-gray-600 dark:text-gray-400">اضغط على اسم أي عمود لترتيب البيانات أو على اسم الموظف لعرض التفاصيل.</p>
+  </header>
+  
+  <!-- Stats Cards -->
+  <div id="stats-container" class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+    <!-- سيتم ملؤها ديناميكياً -->
+  </div>
+
+  <!-- Global Search -->
+  <div class="mb-6">
+    <input id="global-search" type="text" placeholder="🔍 ابحث باسم الموظف، المعرض، المدير، أو أي معلومة..." 
+           class="w-full p-3 border border-gray-300 rounded-md bg-white text-gray-900 shadow-sm focus:ring-2 focus:ring-orange-500 transition-all">
+  </div>
+
+  <div class="max-w-7xl mx-auto space-y-6">
+    <!-- Filter by Manager -->
+    <div>
+      <label for="manager-filter" class="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">تصفية حسب المدير:</label>
+      <select id="manager-filter" class="w-full md:w-64 p-3 border border-gray-300 rounded-md bg-white text-gray-900 shadow-sm focus:ring-2 focus:ring-orange-500 transition-all">
+        <option value="all">عرض الكل</option>
+      </select>
+    </div>
+
+    <!-- Filter by Role -->
+    <div class="bg-white p-4 rounded-lg shadow">
+      <h3 class="text-lg font-bold mb-3 text-orange-800 dark:text-orange-400">تصفية حسب المسمى الوظيفي:</h3>
+      <div id="role-checkboxes" class="flex flex-wrap gap-4 text-gray-900">
+        <!-- سيتم ملؤها ديناميكياً -->
+      </div>
+    </div>
+    
+    <!-- Sales Range Filter -->
+    <div class="bg-white p-4 rounded-lg shadow">
+      <h3 class="text-lg font-bold mb-3 text-orange-800 dark:text-orange-400">تصفية حسب نطاق المبيعات:</h3>
+      <div class="flex flex-wrap gap-3">
+        <input type="number" id="min-sales" placeholder="أدنى مبيعات" 
+               class="p-2 border border-gray-300 rounded-md bg-white text-gray-900 w-40">
+        <input type="number" id="max-sales" placeholder="أقصى مبيعات" 
+               class="p-2 border border-gray-300 rounded-md bg-white text-gray-900 w-40">
+        <button id="clear-filters" class="px-4 py-2 bg-gray-500 text-white rounded-md hover:bg-gray-600">إلغاء الفلاتر</button>
+        <button onclick="exportAllToExcel()" class="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700">📊 تصدير Excel الكل</button>
+        <button onclick="exportAllToPDF()" class="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700">📄 تصدير PDF الكل</button>
+      </div>
+    </div>
+
+    <!-- Dashboard Container -->
+    <div id="dashboard-container" class="space-y-10">
+      <!-- سيتم ملؤها بالبيانات -->
+    </div>
+  </div>
+
+  <!-- Employee Modal -->
+  <div id="employeeModal">
+    <div class="bg-white text-gray-900 rounded-lg shadow-lg p-6 w-full max-w-4xl relative max-h-[90vh] overflow-y-auto">
+      <button id="closeModal" class="absolute top-2 left-3 text-gray-400 hover:text-gray-600 text-3xl">&times;</button>
+      <h2 id="modalName" class="text-2xl font-bold text-orange-800 dark:text-orange-400 mb-4"></h2>
+      <div id="modalContent" class="text-gray-700 space-y-3 text-sm"></div>
+    </div>
+  </div>
+  
+  <!-- Compare Button -->
+  <button id="compare-btn" class="bg-orange-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-orange-700 transition-all">
+    مقارنة الموظفين المختارين (<span id="compare-count">0</span>)
+  </button>
+  
+  <!-- Compare Modal -->
+  <div id="compareModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 flex">
+    <div class="bg-white text-gray-900 rounded-lg shadow-lg p-6 w-full max-w-6xl relative max-h-[90vh] overflow-y-auto">
+      <button id="closeCompareModal" class="absolute top-2 left-3 text-gray-400 hover:text-gray-600 text-3xl">&times;</button>
+      <h2 class="text-2xl font-bold mb-4 text-orange-800 dark:text-orange-400">مقارنة الموظفين</h2>
+      <div id="compareContent"></div>
+    </div>
+  </div>
+
+  <script>
+    // ===== Global Variables =====
+    let allEmployees = [];
+    let selectedForCompare = [];
+    
+    // ===== Elements =====
+    const managerFilter = document.getElementById('manager-filter');
+    const roleContainer = document.getElementById('role-checkboxes');
+    const container = document.getElementById('dashboard-container');
+    const searchInput = document.getElementById('global-search');
+    const minSalesInput = document.getElementById('min-sales');
+    const maxSalesInput = document.getElementById('max-sales');
+    const clearFiltersBtn = document.getElementById('clear-filters');
+    const statsContainer = document.getElementById('stats-container');
+    const modal = document.getElementById('employeeModal');
+    const modalName = document.getElementById('modalName');
+    const modalContent = document.getElementById('modalContent');
+    const closeModal = document.getElementById('closeModal');
+    const themeToggle = document.getElementById('theme-toggle');
+    const compareBtn = document.getElementById('compare-btn');
+    const compareCount = document.getElementById('compare-count');
+    const compareModal = document.getElementById('compareModal');
+    const closeCompareModal = document.getElementById('closeCompareModal');
+    
+    // ===== Theme Toggle =====
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      const isDark = document.body.classList.contains('dark');
+      themeToggle.textContent = isDark ? '☀️' : '🌙';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+    
+    // Load saved theme
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark');
+      themeToggle.textContent = '☀️';
+    }
+    
+    // ===== Event Listeners =====
+    closeModal.addEventListener('click', () => modal.classList.remove('active'));
+    modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('active'); });
+    
+    closeCompareModal.addEventListener('click', () => {
+        compareModal.classList.remove('active');
+        compareModal.classList.add('hidden');
+    });
+    compareModal.addEventListener('click', (e) => { 
+        if (e.target === compareModal) {
+            compareModal.classList.remove('active');
+            compareModal.classList.add('hidden');
+        }
+    });
+    
+    searchInput.addEventListener('input', applyFilters);
+    minSalesInput.addEventListener('input', applyFilters);
+    maxSalesInput.addEventListener('input', applyFilters);
+    
+    clearFiltersBtn.addEventListener('click', () => {
+      searchInput.value = '';
+      minSalesInput.value = '';
+      maxSalesInput.value = '';
+      managerFilter.value = 'all';
+      roleContainer.querySelectorAll('input').forEach(ch => ch.checked = false);
+      localStorage.removeItem('filters');
+      applyFilters();
+    });
+    
+    compareBtn.addEventListener('click', showComparison);
+    
+    // ===== Fetch and Initialize =====
+    async function initializeDashboard() {
+      try {
+        showLoading(true);
+        const response = await fetch('data.json');
+        if (!response.ok) throw new Error('تعذر تحميل data.json. تأكد أنك تشغل الصفحة عبر سيرفر محلي (http://) وليس (file://)');
+        const data = await response.json();
+
+        // --- DATA LOADING FIX ---
+        // 1. Call the function that *correctly* processes and populates `allEmployees`
+        processData(data);
+        
+        // 2. Pass the *correct* objects to renderDashboard
+        renderDashboard(data.employees_by_store, data.managers);
+        // --- END FIX ---
+
+        updateStats(); // This will now use the correctly populated `allEmployees`
+        setupRoles(data.employees_by_store);
+        loadSavedFilters();
+        
+        showLoading(false);
+      } catch (err) {
+        console.error(err);
+        container.innerHTML = `<p class='text-center text-red-600 font-bold'>${err.message}</p>`;
+        showLoading(false);
+      }
+    }
+    
+    function showLoading(show) {
+      if (show) {
+        container.innerHTML = '<div class="text-center py-10"><div class="skeleton w-full h-64"></div></div>';
+      }
+    }
+    
+    function processData(data) {
+      // This function iterates the correct structure and populates the global `allEmployees` array
+      if (!data.employees_by_store) return;
+      
+      allEmployees = []; // Clear it first
+      for (const [storeKey, storeData] of Object.entries(data.employees_by_store)) {
+          if (storeData.employees && Array.isArray(storeData.employees)) {
+              storeData.employees.forEach(emp => {
+                  const { avg, monthsWorked, tooltip } = calculateAvgSales(emp.total_sales, emp.join_date, emp.monthly_sales);
+                  allEmployees.push({ ...emp, avg, monthsWorked, tooltip });
+              });
+          }
+      }
+    }
+
+    function calculateAvgSales(totalSales, joinDateStr, monthlySales) {
+        const joinDate = new Date(joinDateStr);
+        const startDate = new Date('2025-01-01');
+        const endDate = new Date('2025-09-30');
+
+        // --- AVG CALCULATION FIX ---
+        // Use new Date() to convert the timestamp back to a Date object
+        let startMonthDate = new Date(Math.max(joinDate, startDate));
+        
+        // Calculate month difference
+        let monthsWorked = (endDate.getFullYear() - startMonthDate.getFullYear()) * 12 + (endDate.getMonth() - startMonthDate.getMonth()) + 1;
+        if (monthsWorked < 0) monthsWorked = 0;
+        
+        let firstMonthIndex = -1;
+        let lastMonthIndex = -1;
+        
+        if (monthlySales && monthlySales.length > 0) {
+             firstMonthIndex = monthlySales.findIndex(s => s > 0);
+             for(let i = monthlySales.length - 1; i >= 0; i--) {
+                 if (monthlySales[i] > 0) {
+                     lastMonthIndex = i;
+                     break;
+                 }
+             }
+        }
+
+        let monthsWithSales = 0;
+        if (firstMonthIndex !== -1 && lastMonthIndex !== -1) {
+            monthsWithSales = lastMonthIndex - firstMonthIndex + 1;
+        }
+
+        // Use monthsWithSales if available and greater than 0, otherwise use monthsWorked from join date
+        const effectiveMonths = monthsWithSales > 0 ? monthsWithSales : (monthsWorked > 0 ? monthsWorked : 1);
+        
+        const avg = (parseFloat(totalSales) || 0) / effectiveMonths;
+        
+        const monthNames = ["يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر"];
+        const fromMonth = monthNames[firstMonthIndex] || "N/A";
+        const toMonth = monthNames[lastMonthIndex] || "N/A";
+        const tooltip = `تم حساب المتوسط بناءً على ${effectiveMonths} شهر (من ${fromMonth} إلى ${toMonth} 2025)`;
+
+        return { avg, monthsWorked: effectiveMonths, tooltip };
+    }
+    
+    function setupRoles(employeesByStore) {
+      const roles = new Set();
+      // Use the already populated allEmployees array
+      allEmployees.forEach(emp => {
+          if (emp.title) roles.add(emp.title);
+      });
+      
+      roleContainer.innerHTML = '';
+      Array.from(roles).sort().forEach(role => {
+        const label = document.createElement('label');
+        label.className = 'flex items-center gap-2';
+        label.innerHTML = `<input type="checkbox" value="${role}" /> ${role}`;
+        roleContainer.appendChild(label);
+      });
+    }
+    
+    function renderDashboard(employeesByStore, managers) {
+      const allManagers = managers ? Object.keys(managers) : [];
+      managerFilter.innerHTML = '<option value="all">عرض الكل</option>';
+      allManagers.forEach(manager => {
+        const opt = document.createElement('option');
+        opt.value = manager;
+        opt.textContent = manager;
+        managerFilter.appendChild(opt);
+      });
+      
+      managerFilter.addEventListener('change', applyFilters);
+      roleContainer.addEventListener('change', applyFilters);
+      
+      applyFilters(); // Initial render
+    }
+    
+    function applyFilters() {
+      const selectedManager = managerFilter.value;
+      const selectedRoles = getSelectedRoles();
+      const searchTerm = searchInput.value.toLowerCase();
+      const minSales = parseFloat(minSalesInput.value) || 0;
+      const maxSales = parseFloat(maxSalesInput.value) || Infinity;
+      
+      localStorage.setItem('filters', JSON.stringify({
+        manager: selectedManager,
+        roles: selectedRoles,
+        search: searchTerm,
+        minSales: minSales,
+        maxSales: maxSales
+      }));
+      
+      let filtered = allEmployees.filter(emp => {
+        if (selectedRoles.length > 0 && !selectedRoles.includes(emp.title)) return false;
+        if (selectedManager !== 'all' && emp.manager !== selectedManager) return false;
+        if (searchTerm && !JSON.stringify(emp).toLowerCase().includes(searchTerm)) return false;
+        if (emp.total_sales < minSales || emp.total_sales > maxSales) return false;
+        return true;
+      });
+      
+      displayEmployees(filtered);
+      updateStats(filtered);
+    }
+    
+    function getSelectedRoles() {
+      return Array.from(roleContainer.querySelectorAll('input:checked')).map(ch => ch.value);
+    }
+    
+    function displayEmployees(employees) {
+      if (!employees.length) {
+        container.innerHTML = `<p class='text-center text-gray-500 mt-8'>لا توجد بيانات مطابقة</p>`;
+        return;
+      }
+      
+      // Calculate total sales for each outlet based on *all* employees, not just filtered ones
+      const outletTotals = {};
+      allEmployees.forEach(emp => {
+        const sales = parseFloat(emp.total_sales) || 0;
+        if (!outletTotals[emp.outlet]) outletTotals[emp.outlet] = 0;
+        outletTotals[emp.outlet] += sales;
+      });
+      
+      const rows = employees.map(emp => {
+        const avgCommission = emp.total_commission ? emp.total_commission / emp.monthsWorked : 0;
+        const avgIncome = (parseFloat(emp.salary) || 0) + avgCommission;
+        
+        const outletTotal = outletTotals[emp.outlet] || 1; // Avoid division by zero
+        const sharePct = (emp.total_sales / outletTotal) * 100;
+        
+        // Ensure checkbox is checked if emp is in selectedForCompare
+        const isChecked = selectedForCompare.some(item => item.id === emp.id) ? 'checked' : '';
+        
+        return `
+          <tr>
+            <td class='font-semibold'>
+              <div class="flex items-center justify-center gap-2">
+                <input type="checkbox" class="emp-check" data-id="${emp.id}" ${isChecked} title="اختر للمقارنة">
+                <span class="text-indigo-700 cursor-pointer hover:underline" onclick='showDetails(${JSON.stringify(emp)})' title="اضغط لعرض تفاصيل الموظف">${emp.name}</span>
+              </div>
+            </td>
+            <td>${emp.outlet}</td>
+            <td title="إجمالي مبيعات الموظف: ${formatNumber(emp.total_sales)}">${formatNumber(emp.total_sales)}</td>
+            <td title="نسبة مساهمة الموظف في مبيعات المعرض">${sharePct.toFixed(1)}%</td>
+            <td title="${emp.tooltip}">${formatNumber(emp.avg)}</td>
+            <td title="تاريخ الانضمام: ${emp.join_date}">
+              ${emp.years_of_service}
+            </td>
+            <td title="الراتب الشهري الثابت">${formatNumber(emp.salary)}</td>
+            <td title="إجمالي العمولات">${formatNumber(emp.total_commission)}</td>
+            <td title="الراتب + (العمولات ÷ ${emp.monthsWorked})">${formatNumber(avgIncome)}</td>
+          </tr>`;
+      }).join('');
+      
+      const managerName = managerFilter.value === "all" ? "جميع المدراء" : managerFilter.value;
+      const outletCount = new Set(employees.map(e => e.outlet)).size;
+
+      container.innerHTML = `
+        <div class='bg-white shadow-md rounded-lg p-4'>
+          <div class='flex flex-col md:flex-row justify-between items-center mb-3 gap-2'>
+            <h3 class='text-lg font-bold text-gray-800'>
+              ${managerName} (المعارض: ${outletCount})
+            </h3>
+            <span class='text-sm text-gray-500'>عرض ${employees.length} موظف</span>
+          </div>
+          <div class='overflow-x-auto'>
+            <table class='w-full text-sm text-center'>
+              <thead>
+                <tr>
+                  <th data-key='name' class="w-1/12">اسم الموظف</th>
+                  <th data-key='outlet' class="w-2/12">المعرض</th>
+                  <th data-key='total_sales' class="w-1/12">المبيعات</th>
+                  <th data-key='sales_share' class="w-1/12">حصة المبيعات (%)</th>
+                  <th data-key='avg' class="w-1/12">متوسط المبيعات</th>
+                  <th data-key='years_of_service' class="w-1/12">الخدمة</th>
+                  <th data-key='salary' class="w-1/12">الراتب</th>
+                  <th data-key='total_commission' class="w-1/12">العمولات</th>
+                  <th data-key='average_income' class="w-1/12">متوسط الدخل</th>
+                </tr>
+              </thead>
+              <tbody>${rows}</tbody>
+            </table>
+          </div>
+        </div>`;
+      
+      document.querySelectorAll('th').forEach(th => {
+        th.addEventListener('click', () => sortTable(th));
+      });
+      
+      document.querySelectorAll('.emp-check').forEach(ch => {
+        ch.addEventListener('change', updateCompareList);
+      });
+    }
+
+    function updateCompareList(e) {
+        const checkbox = e.target;
+        const empId = parseInt(checkbox.dataset.id);
+        
+        if (checkbox.checked) {
+            // Add to list if not already present
+            if (!selectedForCompare.some(item => item.id === empId)) {
+                const emp = allEmployees.find(item => item.id === empId);
+                if (emp) selectedForCompare.push(emp);
+            }
+        } else {
+            // Remove from list
+            selectedForCompare = selectedForCompare.filter(item => item.id !== empId);
+        }
+        
+        compareCount.textContent = selectedForCompare.length;
+        if (selectedForCompare.length > 0) {
+            compareBtn.classList.add('show');
+        } else {
+            compareBtn.classList.remove('show');
+        }
+    }
+    
+    // --- COMPARE FUNCTION FIX: Re-added the missing function ---
+    function showComparison() {
+        if (selectedForCompare.length === 0) {
+            showToast('الرجاء اختيار موظف واحد على الأقل للمقارنة', 'warning');
+            return;
+        }
+
+        let tableHtml = `
+            <div class="overflow-x-auto mb-6">
+                <table class="w-full text-center">
+                    <thead>
+                        <tr>
+                            <th class="text-right">المقياس</th>
+                            ${selectedForCompare.map(emp => `<th>${emp.name}</th>`).join('')}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="font-bold text-right">اسم الموظف</td>${selectedForCompare.map(emp => `<td>${emp.name}</td>`).join('')}</tr>
+                        <tr><td class="font-bold text-right">المعرض</td>${selectedForCompare.map(emp => `<td>${emp.outlet}</td>`).join('')}</tr>
+                        <tr><td class="font-bold text-right">الراتب الأساسي</td>${selectedForCompare.map(emp => `<td>${formatNumber(emp.salary)}</td>`).join('')}</tr>
+                        <tr><td class="font-bold text-right">إجمالي المبيعات</td>${selectedForCompare.map(emp => `<td>${formatNumber(emp.total_sales)}</td>`).join('')}</tr>
+                        <tr><td class="font-bold text-right">متوسط المبيعات</td>${selectedForCompare.map(emp => `<td>${formatNumber(emp.avg)}</td>`).join('')}</tr>
+                        <tr><td class="font-bold text-right">إجمالي العمولات</td>${selectedForCompare.map(emp => `<td>${formatNumber(emp.total_commission)}</td>`).join('')}</tr>
+                        <tr><td class="font-bold text-right">متوسط الدخل</td>${selectedForCompare.map(emp => `<td>${formatNumber((parseFloat(emp.salary) || 0) + (emp.total_commission / emp.monthsWorked))}</td>`).join('')}</tr>
+                        <tr><td class="font-bold text-right">الخدمة</td>${selectedForCompare.map(emp => `<td>${emp.years_of_service}</td>`).join('')}</tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style="height: 400px;"><canvas id="compareChart"></canvas></div>
+        `;
+        
+        document.getElementById('compareContent').innerHTML = tableHtml;
+        compareModal.classList.remove('hidden'); // Use class to show
+        compareModal.classList.add('active');
+
+        // --- CHART FIX START ---
+        // Reverse arrays for RTL display
+        const chartLabels = selectedForCompare.map(emp => emp.name).reverse();
+        const chartSalesData = selectedForCompare.map(emp => emp.total_sales).reverse();
+        const chartAvgData = selectedForCompare.map(emp => emp.avg).reverse();
+
+        // Render Chart
+        const ctx = document.getElementById('compareChart').getContext('2d');
+        if (window.compareChartInstance) {
+            window.compareChartInstance.destroy(); // Destroy previous chart if exists
+        }
+        window.compareChartInstance = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: chartLabels, // Use reversed labels
+                datasets: [
+                    {
+                        label: 'إجمالي المبيعات',
+                        data: chartSalesData, // Use reversed data
+                        backgroundColor: 'rgba(234, 88, 12, 0.7)', // Orange
+                    },
+                    {
+                        label: 'متوسط المبيعات',
+                        data: chartAvgData, // Use reversed data
+                        backgroundColor: 'rgba(16, 185, 129, 0.7)',
+                    }
+                ]
+            },
+            options: {
+                scales: {
+                    x: {
+                        reverse: true, // Reverse X-axis for RTL
+                        ticks: { autoSkip: false }
+                    },
+                    y: { beginAtZero: true }
+                },
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { 
+                        position: 'top',
+                        rtl: true,
+                        labels: { textDirection: 'rtl' }
+                    },
+                    tooltip: {
+                        rtl: true,
+                        textDirection: 'rtl'
+                    }
+                }
+            }
+        });
+        // --- CHART FIX END ---
+    }
+    
+    function sortTable(clickedTh) {
+      const key = clickedTh.dataset.key;
+      if (!key) return;
+      
+      const table = clickedTh.closest('table');
+      const tbody = table.querySelector('tbody');
+      const rows = Array.from(tbody.querySelectorAll('tr'));
+      
+      const direction = table.dataset.sorted === key && table.dataset.direction === 'asc' ? 'desc' : 'asc';
+      table.dataset.sorted = key;
+      table.dataset.direction = direction;
+      
+      // Reset arrows
+      table.querySelectorAll('th').forEach(th => th.innerHTML = th.innerHTML.replace(/[ ↑↓]/g, ''));
+      clickedTh.innerHTML += (direction === 'asc' ? ' ↑' : ' ↓');
+
+      // Find the correct employee object for each row
+      const rowsWithData = rows.map(row => {
+          const id = parseInt(row.querySelector('.emp-check')?.dataset.id);
+          const emp = allEmployees.find(e => e.id === id);
+          return { row, emp };
+      });
+      
+      rowsWithData.sort((a, b) => {
+          if (!a.emp || !b.emp) return 0;
+          
+          let valA, valB;
+
+          // Get values directly from the employee object for accurate sorting
+          switch(key) {
+              case 'name':
+              case 'outlet':
+              case 'years_of_service':
+                  valA = a.emp[key];
+                  valB = b.emp[key];
+                  break;
+              case 'total_sales':
+              case 'salary':
+              case 'total_commission':
+                  valA = parseFloat(a.emp[key]) || 0;
+                  valB = parseFloat(b.emp[key]) || 0;
+                  break;
+              case 'avg':
+                  valA = a.emp.avg || 0;
+                  valB = b.emp.avg || 0;
+                  break;
+              case 'average_income':
+                  valA = (parseFloat(a.emp.salary) || 0) + (a.emp.total_commission / a.emp.monthsWorked);
+                  valB = (parseFloat(b.emp.salary) || 0) + (b.emp.total_commission / b.emp.monthsWorked);
+                  break;
+              case 'sales_share':
+                  const outletTotalA = allEmployees.filter(e => e.outlet === a.emp.outlet).reduce((sum, e) => sum + (parseFloat(e.total_sales) || 0), 1);
+                  const outletTotalB = allEmployees.filter(e => e.outlet === b.emp.outlet).reduce((sum, e) => sum + (parseFloat(e.total_sales) || 0), 1);
+                  valA = (a.emp.total_sales / (outletTotalA || 1)) * 100;
+                  valB = (b.emp.total_sales / (outletTotalB || 1)) * 100;
+                  break;
+              default:
+                  return 0;
+          }
+
+          let comparison = 0;
+          if (typeof valA === 'number') {
+              comparison = valA - valB;
+          } else if (typeof valA === 'string') {
+              comparison = valA.localeCompare(valB, 'ar');
+          }
+          
+          return direction === 'asc' ? comparison : -comparison;
+      });
+      
+      // Re-append sorted rows
+      rowsWithData.forEach(item => tbody.appendChild(item.row));
+    }
+    
+    function showDetails(emp) {
+      modalName.textContent = emp.name;
+      
+      const avgCommission = emp.total_commission ? emp.total_commission / emp.monthsWorked : 0;
+      const avgIncome = (parseFloat(emp.salary) || 0) + avgCommission;
+      
+      const monthNames = ["يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر"];
+      const salesData = emp.monthly_sales.map((sales, i) => ({ month: monthNames[i], sales: sales || 0 }));
+      const commissionData = emp.monthly_commissions.map((comm, i) => ({ month: monthNames[i], commission: comm || 0 }));
+      
+      modalContent.innerHTML = `
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <p><strong>المسمى الوظيفي:</strong> ${emp.title}</p>
+            <p><strong>المعرض:</strong> ${emp.outlet}</p>
+            <p><strong>المدير:</strong> ${emp.manager}</p>
+            <p><strong>تاريخ الانضمام:</strong> ${emp.join_date}</p>
+            <p><strong>سنوات الخدمة:</strong> ${emp.years_of_service}</p>
+          </div>
+          <div class="space-y-2">
+            <p><strong>الراتب الأساسي:</strong> ${formatNumber(emp.salary)}</p>
+            <p><strong>إجمالي العمولات:</strong> ${formatNumber(emp.total_commission)}</p>
+            <p><strong>متوسط الدخل الشهري:</strong> ${formatNumber(avgIncome)}</p>
+            <p><strong>إجمالي المبيعات:</strong> ${formatNumber(emp.total_sales)}</p>
+            <p><strong>متوسط المبيعات الشهري:</strong> ${formatNumber(emp.avg)} (${emp.tooltip})</p>
+          </div>
+        </div>
+        
+        <div class="mt-6">
+          <h3 class="text-lg font-bold mb-2 text-orange-700">أداء المبيعات والعمولات (آخر ${emp.monthsWorked} أشهر)</h3>
+          <div style="height: 300px;"><canvas id="salesChart"></canvas></div>
+        </div>
+      `;
+      
+      modal.classList.add('active');
+      
+      // Render Chart
+      const ctx = document.getElementById('salesChart').getContext('2d');
+      if (window.salesChartInstance) {
+          window.salesChartInstance.destroy();
+      }
+      window.salesChartInstance = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: salesData.map(d => d.month),
+          datasets: [
+            {
+              label: 'المبيعات',
+              data: salesData.map(d => d.sales),
+              backgroundColor: 'rgba(234, 88, 12, 0.7)', // Orange
+              yAxisID: 'y-sales',
+            },
+            {
+              label: 'العمولات',
+              data: commissionData.map(d => d.commission),
+              backgroundColor: 'rgba(16, 185, 129, 0.7)',
+              yAxisID: 'y-commissions',
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            'y-sales': {
+              type: 'linear',
+              position: 'left',
+              title: { display: true, text: 'المبيعات' }
+            },
+            'y-commissions': {
+              type: 'linear',
+              position: 'right',
+              title: { display: true, text: 'العمولات' },
+              grid: { drawOnChartArea: false } // only show grid for sales
+            }
+          }
+        }
+      });
+    }
+    
+    function updateStats(filteredEmployees = allEmployees) {
+      const totalEmployees = filteredEmployees.length;
+      const totalSales = filteredEmployees.reduce((sum, emp) => sum + (parseFloat(emp.total_sales) || 0), 0);
+      const avgSales = totalEmployees > 0 ? totalSales / totalEmployees : 0;
+      const totalCommissions = filteredEmployees.reduce((sum, emp) => sum + (parseFloat(emp.total_commission) || 0), 0);
+      
+      statsContainer.innerHTML = `
+        <div class="bg-white p-4 rounded-lg shadow">
+          <h4 class="text-sm font-semibold text-gray-500">عدد الموظفين</h4>
+          <p class="text-2xl font-bold text-gray-900">${totalEmployees}</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow">
+          <h4 class="text-sm font-semibold text-gray-500">إجمالي المبيعات</h4>
+          <p class="text-2xl font-bold text-gray-900">${formatNumber(totalSales)}</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow">
+          <h4 class="text-sm font-semibold text-gray-500">متوسط المبيعات للموظف</h4>
+          <p class="text-2xl font-bold text-gray-900">${formatNumber(avgSales)}</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow">
+          <h4 class="text-sm font-semibold text-gray-500">إجمالي العمولات</h4>
+          <p class="text-2xl font-bold text-gray-900">${formatNumber(totalCommissions)}</p>
+        </div>
+      `;
+    }
+    
+    function loadSavedFilters() {
+      const filters = JSON.parse(localStorage.getItem('filters'));
+      if (filters) {
+        managerFilter.value = filters.manager || 'all';
+        searchInput.value = filters.search || '';
+        minSalesInput.value = filters.minSales || '';
+        maxSalesInput.value = filters.maxSales === Infinity ? '' : filters.maxSales;
+        
+        if (filters.roles && filters.roles.length > 0) {
+          filters.roles.forEach(role => {
+            const cb = roleContainer.querySelector(`input[value="${role}"]`);
+            if (cb) cb.checked = true;
+          });
+        }
+        applyFilters();
+      }
+    }
+    
+    // ===== Utilities =====
+    function formatNumber(num) {
+      // Use 'en-US' locale to force English numerals (1, 2, 3)
+      return new Intl.NumberFormat('en-US', {
+        maximumFractionDigits: 0,
+        useGrouping: true 
+      }).format(num);
+    }
+    
+    function showToast(message, type = 'success') {
+      const toast = document.createElement('div');
+      toast.className = 'toast';
+      if (type === 'success') toast.style.backgroundColor = 'var(--success-color)';
+      if (type === 'error') toast.style.backgroundColor = 'var(--danger-color)';
+      if (type === 'warning') toast.style.backgroundColor = 'var(--warning-color)';
+      
+      toast.textContent = message;
+      document.body.appendChild(toast);
+      
+      setTimeout(() => toast.classList.add('show'), 10);
+      setTimeout(() => {
+        toast.classList.remove('show');
+        setTimeout(() => toast.remove(), 300);
+      }, 3000);
+    }
+    
+    async function exportAllToExcel() {
+      showToast('جاري تحضير ملف Excel...', 'warning');
+      try {
+        const ws = XLSX.utils.json_to_sheet(allEmployees);
+        const wb = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(wb, ws, "بيانات الموظفين");
+        XLSX.writeFile(wb, "employees_export.xlsx");
+        showToast('تم تصدير Excel بنجاح', 'success');
+      } catch (e) {
+        showToast('فشل تصدير Excel', 'error');
+        console.error(e);
+      }
+    }
+    
+    async function exportAllToPDF() {
+        showToast('هذه الميزة (PDF) قيد التطوير.', 'warning');
+        // PDF export is complex with large tables and Arabic.
+    }
+
+    // ===== Start Application =====
+    document.addEventListener('DOMContentLoaded', initializeDashboard);
+  </script>
+</body>
+</html>
