@@ -128,11 +128,12 @@ def process():
             total_commission = safe_float(row.get("total commission", 0))
 
             # المبيعات والعمولات الشهرية (sales-1..sales-9 , commission-1..commission-9)
-            monthly_sales = [safe_float(row.get(f"sales-{i}", 0)) for i in range(1, 10)]
-            monthly_commissions = [safe_float(row.get(f"commission-{i}", 0)) for i in range(1, 10)]
+            monthly_sales = [safe_float(row.get(f"sales-{i}", 0)) for i in range(1, 12)]
+            monthly_commissions = [safe_float(row.get(f"commission-{i}", 0)) for i in range(1, 12)]
+
 
             # حساب متوسط العمولات الشهرية الفعّالة فقط
-            months_count = len([v for v in monthly_commissions if v > 0]) or 9
+            months_count = max(len([v for v in monthly_commissions if v > 0]), 1)
             avg_monthly_comm = sum(monthly_commissions) / months_count
             average_income = salary + avg_monthly_comm
 

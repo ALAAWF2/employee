@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,9 +8,19 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
-    body { font-family: 'Cairo', sans-serif; background: #f7fafc; }
-    table { width: 100%; border-collapse: collapse; table-layout: fixed; }
-    th, td {
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: #f7fafc;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    th,
+    td {
       padding: 10px 8px;
       border-bottom: 1px solid #e5e7eb;
       text-align: center;
@@ -19,12 +30,27 @@
       word-break: break-word;
       overflow: hidden;
     }
-    th { background: #f1f5f9; cursor: pointer; user-select: none; font-weight: 700; }
-    tr:hover { background: #f9fafb; }
-    label { cursor: pointer; }
+
+    th {
+      background: #f1f5f9;
+      cursor: pointer;
+      user-select: none;
+      font-weight: 700;
+    }
+
+    tr:hover {
+      background: #f9fafb;
+    }
+
+    label {
+      cursor: pointer;
+    }
 
     /* ===== التلميحات (Tooltips) ===== */
-    td[title] { position: relative; }
+    td[title] {
+      position: relative;
+    }
+
     td[title]:hover::after {
       content: attr(title);
       position: absolute;
@@ -54,12 +80,16 @@
       display: none;
       align-items: center;
       justify-content: center;
-      background: rgba(0,0,0,0.5);
+      background: rgba(0, 0, 0, 0.5);
       z-index: 50;
     }
-    #employeeModal.active { display: flex; }
+
+    #employeeModal.active {
+      display: flex;
+    }
   </style>
 </head>
+
 <body class="p-6">
   <header class="mb-8 text-center">
     <h1 class="text-3xl font-bold text-gray-800 mb-2">لوحة بيانات الموظفين</h1>
@@ -69,7 +99,8 @@
   <div class="max-w-7xl mx-auto space-y-6">
     <div>
       <label for="manager-filter" class="block text-sm font-medium text-gray-700 mb-2">تصفية حسب المدير:</label>
-      <select id="manager-filter" class="w-full md:w-64 p-3 border border-gray-300 rounded-md bg-white shadow-sm focus:ring-2 focus:ring-indigo-500">
+      <select id="manager-filter"
+        class="w-full md:w-64 p-3 border border-gray-300 rounded-md bg-white shadow-sm focus:ring-2 focus:ring-indigo-500">
         <option value="all">عرض الكل</option>
       </select>
     </div>
@@ -77,7 +108,8 @@
     <div>
       <h3 class="text-lg font-bold text-indigo-800 mb-3">تصفية حسب المسمى الوظيفي:</h3>
       <div id="role-checkboxes" class="flex flex-wrap gap-4">
-        <label class="flex items-center gap-2"><input type="checkbox" value="عامل تحميل و تنزيل" /> عامل تحميل و تنزيل</label>
+        <label class="flex items-center gap-2"><input type="checkbox" value="عامل تحميل و تنزيل" /> عامل تحميل و
+          تنزيل</label>
         <label class="flex items-center gap-2"><input type="checkbox" value="مشرف معارض" /> مشرف معارض</label>
         <label class="flex items-center gap-2"><input type="checkbox" value="مدير معرض" /> مدير معرض</label>
         <label class="flex items-center gap-2"><input type="checkbox" value="بائع" /> بائع</label>
@@ -144,14 +176,14 @@
       return Array.from(roleContainer.querySelectorAll('input:checked')).map(ch => ch.value);
     }
 
-    function displayManagerSections(employeesByStore, managers, selectedManager='all', selectedRoles=[]) {
+    function displayManagerSections(employeesByStore, managers, selectedManager = 'all', selectedRoles = []) {
       container.innerHTML = '';
 
       // إجمالي مبيعات كل معرض (بدون فلترة)
       const outletTotals = {};
       for (const [_, storeData] of Object.entries(employeesByStore)) {
         storeData.employees.forEach(emp => {
-          const sales = parseFloat(emp.total_sales) || 0;
+          const sales = (emp.monthly_sales || []).reduce((a, b) => a + (parseFloat(b) || 0), 0);
           if (!outletTotals[emp.outlet]) outletTotals[emp.outlet] = 0;
           outletTotals[emp.outlet] += sales;
         });
@@ -162,9 +194,19 @@
         storeData.employees.forEach(emp => {
           if (selectedRoles.length > 0 && !selectedRoles.includes(emp.title)) return;
           if (selectedManager !== 'all' && emp.manager !== selectedManager) return;
-          const { avg, monthsWorked, fromMonth, toMonth } = calculateAvgSales(emp.total_sales, emp.join_date);
+
+          const calculatedTotalSales = (emp.monthly_sales || []).reduce((a, b) => a + (parseFloat(b) || 0), 0);
+          const { avg, monthsWorked, fromMonth, toMonth } = calculateAvgSales(calculatedTotalSales, emp.join_date);
           const tooltip = `تم حساب المتوسط بناءً على ${monthsWorked} شهر (${fromMonth} - ${toMonth})`;
-          allEmployees.push({ ...emp, avg, monthsWorked, tooltip });
+
+          // Store calculated values
+          allEmployees.push({
+            ...emp,
+            avg,
+            monthsWorked,
+            tooltip,
+            calculatedTotalSales
+          });
         });
       }
 
@@ -175,26 +217,30 @@
 
       let rows = allEmployees.map(emp => {
         const joinDate = new Date(emp.join_date);
-        let monthsForCalc = joinDate < new Date('2025-01-01') ? 9 : emp.monthsWorked;
-        if (!monthsForCalc || monthsForCalc < 1) monthsForCalc = 1;
 
-        const avgCommission = emp.total_commission ? emp.total_commission / monthsForCalc : 0;
+        // حساب العمولات من المصفوفة
+        const monthlyComms = (emp.monthly_commissions || []).map(v => parseFloat(v) || 0);
+        const calculatedTotalCommission = monthlyComms.reduce((a, b) => a + b, 0);
+        const commissionMonths = monthlyComms.filter(v => v > 0).length || 1;
+
+        const avgCommission = calculatedTotalCommission / commissionMonths;
         const avgIncome = (parseFloat(emp.salary) || 0) + avgCommission;
 
         const outletTotal = outletTotals[emp.outlet] || 1;
-        const sharePct = (emp.total_sales / outletTotal) * 100;
+        // Use calculated total sales
+        const sharePct = (emp.calculatedTotalSales / outletTotal) * 100;
 
         return `
           <tr>
-            <td class='text-indigo-700 font-semibold cursor-pointer hover:underline' onclick='showDetails(${JSON.stringify(emp)})' title="اضغط لعرض تفاصيل الموظف">${emp.name}</td>
+            <td class='text-indigo-700 font-semibold cursor-pointer hover:underline' onclick='showDetails(${JSON.stringify(emp).replace(/'/g, "&#39;")})' title="اضغط لعرض تفاصيل الموظف">${emp.name}</td>
             <td>${emp.outlet}</td>
-            <td title="إجمالي مبيعات الموظف">${formatNumber(emp.total_sales)}</td>
+            <td title="إجمالي مبيعات الموظف">${formatNumber(emp.calculatedTotalSales)}</td>
             <td title="نسبة مساهمة الموظف في مبيعات المعرض">${sharePct.toFixed(1)}%</td>
             <td title="${emp.tooltip}">${formatNumber(emp.avg)}</td>
             <td title="تاريخ الانضمام: ${emp.join_date}">${emp.years_of_service}</td>
             <td title="الراتب الشهري الثابت">${formatNumber(emp.salary)}</td>
-            <td title="إجمالي العمولات">${formatNumber(emp.total_commission)}</td>
-            <td title="الراتب + (العمولات ÷ ${monthsForCalc})">${formatNumber(avgIncome)}</td>
+            <td title="إجمالي العمولات (محسوبة من تفاصيل الأشهر)">${formatNumber(calculatedTotalCommission)}</td>
+            <td title="الراتب + (متوسط عمولة ${commissionMonths} شهر فعلي)">${formatNumber(avgIncome)}</td>
           </tr>`;
       }).join('');
 
@@ -241,15 +287,22 @@
       modalName.textContent = emp.name;
       const sales = emp.monthly_sales || [];
       const comms = emp.monthly_commissions || [];
-      let salesRows = sales.map((v,i)=> `<tr><td>الشهر ${i+1}</td><td>${formatNumber(v)}</td><td>${formatNumber(comms[i]||0)}</td></tr>`).join('');
+      let salesRows = sales.map((v, i) => `<tr><td>الشهر ${i + 1}</td><td>${formatNumber(v)}</td><td>${formatNumber(comms[i] || 0)}</td></tr>`).join('');
+
+      const monthlyComms = (emp.monthly_commissions || []).map(v => parseFloat(v) || 0);
+      const totalCommCalc = monthlyComms.reduce((a, b) => a + b, 0);
+
+      const monthlySales = (emp.monthly_sales || []).map(v => parseFloat(v) || 0);
+      const totalSalesCalc = monthlySales.reduce((a, b) => a + b, 0);
+
       modalContent.innerHTML = `
         <p><strong>المسمى الوظيفي:</strong> ${emp.title}</p>
         <p><strong>المعرض:</strong> ${emp.outlet}</p>
         <p><strong>تاريخ الانضمام:</strong> ${emp.join_date}</p>
         <p><strong>سنوات الخدمة:</strong> ${emp.years_of_service}</p>
         <p><strong>الراتب:</strong> ${formatNumber(emp.salary)}</p>
-        <p><strong>إجمالي العمولات:</strong> ${formatNumber(emp.total_commission)}</p>
-        <p><strong>إجمالي المبيعات:</strong> ${formatNumber(emp.total_sales)}</p>
+        <p><strong>إجمالي العمولات:</strong> ${formatNumber(totalCommCalc)}</p>
+        <p><strong>إجمالي المبيعات:</strong> ${formatNumber(totalSalesCalc)}</p>
         <hr class='my-3'>
         <p class='font-bold text-indigo-700 mb-2'>تفاصيل الأشهر:</p>
         <table class='w-full text-sm border'>
@@ -272,8 +325,8 @@
       table.dataset.direction = direction;
 
       rows.sort((a, b) => {
-        const valA = a.children[headerIndex].textContent.trim().replace('%','');
-        const valB = b.children[headerIndex].textContent.trim().replace('%','');
+        const valA = a.children[headerIndex].textContent.trim().replace('%', '');
+        const valB = b.children[headerIndex].textContent.trim().replace('%', '');
 
         let numA, numB;
 
@@ -287,11 +340,11 @@
           };
           numA = parseYearsMonths(valA);
           numB = parseYearsMonths(valB);
-        } 
+        }
         else if (isNumeric) {
           numA = parseFloat(valA.replace(/,/g, '')) || 0;
           numB = parseFloat(valB.replace(/,/g, '')) || 0;
-        } 
+        }
         else {
           return direction === 'asc' ? valA.localeCompare(valB, 'ar') : valB.localeCompare(valA, 'ar');
         }
@@ -307,12 +360,12 @@
       if (!totalSales) return { avg: 0, monthsWorked: 0, fromMonth: "-", toMonth: "-" };
       const joinDate = new Date(joinDateStr);
       const startOfYear = new Date('2025-01-01');
-      const endOfData = new Date('2025-09-30');
+      const endOfData = new Date('2025-11-30');
       let effectiveStart = joinDate > startOfYear ? joinDate : startOfYear;
 
       let monthsWorked = (endOfData.getFullYear() - effectiveStart.getFullYear()) * 12 + (endOfData.getMonth() - effectiveStart.getMonth()) + 1;
       if (monthsWorked < 1) monthsWorked = 1;
-      if (monthsWorked > 9) monthsWorked = 9;
+      if (monthsWorked > 11) monthsWorked = 11;
 
       const fromMonth = effectiveStart.toLocaleString('en-US', { month: 'long' });
       const toMonth = endOfData.toLocaleString('en-US', { month: 'long' });
@@ -328,4 +381,5 @@
     document.addEventListener('DOMContentLoaded', initializeDashboard);
   </script>
 </body>
+
 </html>
