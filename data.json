@@ -79,7 +79,7 @@
             "original_name": "56- Aziz Mall 2",
             "employees": [
                 {
-                    "id": 24.0,
+                    "id": 24,
                     "name": "محمد رشيد كونتيته",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "56- Aziz Mall 2",
@@ -118,7 +118,7 @@
                     "average_income": 4407.5725
                 },
                 {
-                    "id": 2806.0,
+                    "id": 2806,
                     "name": "شاروك ثوران",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "56- Aziz Mall 2",
@@ -157,7 +157,7 @@
                     "average_income": 3279.248888888889
                 },
                 {
-                    "id": 4116.0,
+                    "id": 4116,
                     "name": "روابي رضا الرويثي",
                     "title": "بائع",
                     "outlet": "56- Aziz Mall 2",
@@ -196,7 +196,7 @@
                     "average_income": 5616.417777777778
                 },
                 {
-                    "id": 4379.0,
+                    "id": 4379,
                     "name": "سميه سالم الشمراني",
                     "title": "بائع",
                     "outlet": "56- Aziz Mall 2",
@@ -235,7 +235,7 @@
                     "average_income": 5396.022222222222
                 },
                 {
-                    "id": 4519.0,
+                    "id": 4519,
                     "name": "هدى رديد الفهمي",
                     "title": "بائع",
                     "outlet": "56- Aziz Mall 2",
@@ -274,12 +274,12 @@
                     "average_income": 5617.428571428572
                 },
                 {
-                    "id": 4715.0,
+                    "id": 4715,
                     "name": "ندا سعيد القرني",
                     "title": "بائع",
                     "outlet": "56- Aziz Mall 2",
                     "manager": "شريفة العمري",
-                    "join_date": "2025-10-07",
+                    "join_date": "10/7/2025",
                     "years_of_service": "2 شهور",
                     "salary": 4500.0,
                     "total_commission": 0.0,
@@ -313,12 +313,12 @@
                     "average_income": 5020.0
                 },
                 {
-                    "id": 4768.0,
+                    "id": 4768,
                     "name": "فتون محمد محبوب",
                     "title": "بائع",
                     "outlet": "56- Aziz Mall 2",
                     "manager": "شريفة العمري",
-                    "join_date": "2025-11-16",
+                    "join_date": "11/16/2025",
                     "years_of_service": "1 شهور",
                     "salary": 4500.0,
                     "total_commission": 0.0,
@@ -350,45 +350,6 @@
                         333.0
                     ],
                     "average_income": 4833.0
-                },
-                {
-                    "id": 0,
-                    "name": 0,
-                    "title": 0,
-                    "outlet": "56- Aziz Mall 2",
-                    "manager": "شريفة العمري",
-                    "join_date": "2012-01-15",
-                    "years_of_service": "13 و 11 شهور",
-                    "salary": 0.0,
-                    "total_commission": 0.0,
-                    "total_sales": 35128.5,
-                    "monthly_sales": [
-                        0.0,
-                        0.0,
-                        0.0,
-                        0.0,
-                        0.0,
-                        0.0,
-                        0.0,
-                        0.0,
-                        0.0,
-                        0.0,
-                        34825.5
-                    ],
-                    "monthly_commissions": [
-                        0.0,
-                        0.0,
-                        0.0,
-                        0.0,
-                        0.0,
-                        0.0,
-                        0.0,
-                        0.0,
-                        0.0,
-                        0.0,
-                        303.0
-                    ],
-                    "average_income": 303.0
                 }
             ]
         },
@@ -396,7 +357,7 @@
             "original_name": "43-Mujan Park",
             "employees": [
                 {
-                    "id": 29.0,
+                    "id": 29,
                     "name": "منير اين مواين الفان",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "43-Mujan Park",
@@ -435,7 +396,7 @@
                     "average_income": 4376.9175
                 },
                 {
-                    "id": 1596.0,
+                    "id": 1596,
                     "name": "نهى سعيد ال ناصر",
                     "title": "مدير معرض",
                     "outlet": "43-Mujan Park",
@@ -474,7 +435,7 @@
                     "average_income": 6946.607222222222
                 },
                 {
-                    "id": 2737.0,
+                    "id": 2737,
                     "name": "محمد موسثاق بودافيل",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "43-Mujan Park",
@@ -513,7 +474,7 @@
                     "average_income": 3311.5516666666667
                 },
                 {
-                    "id": 3029.0,
+                    "id": 3029,
                     "name": "محمد شان بوثوكودي",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "43-Mujan Park",
@@ -552,7 +513,7 @@
                     "average_income": 3173.5992857142855
                 },
                 {
-                    "id": 4016.0,
+                    "id": 4016,
                     "name": "شروق علي الشهري",
                     "title": "بائع",
                     "outlet": "43-Mujan Park",
@@ -591,7 +552,7 @@
                     "average_income": 4989.55
                 },
                 {
-                    "id": 4250.0,
+                    "id": 4250,
                     "name": "ايمان حسن المالكي",
                     "title": "بائع",
                     "outlet": "43-Mujan Park",
@@ -630,7 +591,7 @@
                     "average_income": 5349.064444444444
                 },
                 {
-                    "id": 4263.0,
+                    "id": 4263,
                     "name": "ساره عوضه الشهراني",
                     "title": "بائع",
                     "outlet": "43-Mujan Park",
@@ -669,12 +630,12 @@
                     "average_income": 5138.276666666667
                 },
                 {
-                    "id": 4761.0,
+                    "id": 4761,
                     "name": "اريام مولع الاسمري",
                     "title": "بائع",
                     "outlet": "43-Mujan Park",
                     "manager": "اماني عسيري",
-                    "join_date": "2025-11-09",
+                    "join_date": "11/9/2025",
                     "years_of_service": "1 شهور",
                     "salary": 4500.0,
                     "total_commission": 0.0,
@@ -708,12 +669,12 @@
                     "average_income": 4936.0
                 },
                 {
-                    "id": 4775.0,
+                    "id": 4775,
                     "name": "انسام عبدالرحمن القحطاني",
                     "title": "بائع",
                     "outlet": "43-Mujan Park",
                     "manager": "اماني عسيري",
-                    "join_date": "2025-11-23",
+                    "join_date": "11/23/2025",
                     "years_of_service": "1 شهور",
                     "salary": 4500.0,
                     "total_commission": 0.0,
@@ -752,7 +713,7 @@
             "original_name": "18-Al_Khayyat Center",
             "employees": [
                 {
-                    "id": 30.0,
+                    "id": 30,
                     "name": "محمد أسامة جمال الدين",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "18-Al_Khayyat Center",
@@ -791,7 +752,7 @@
                     "average_income": 7460.3
                 },
                 {
-                    "id": 1342.0,
+                    "id": 1342,
                     "name": "فراس رتعان الحسن",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "18-Al_Khayyat Center",
@@ -830,7 +791,7 @@
                     "average_income": 7113.6116
                 },
                 {
-                    "id": 3664.0,
+                    "id": 3664,
                     "name": "عماد محمد ضاهر",
                     "title": "مدير معرض",
                     "outlet": "18-Al_Khayyat Center",
@@ -869,7 +830,7 @@
                     "average_income": 8526.362925
                 },
                 {
-                    "id": 4124.0,
+                    "id": 4124,
                     "name": "بدريه شريف المالكي",
                     "title": "بائع",
                     "outlet": "18-Al_Khayyat Center",
@@ -908,7 +869,7 @@
                     "average_income": 5431.607
                 },
                 {
-                    "id": 4394.0,
+                    "id": 4394,
                     "name": "محمدالحسين عيون السود",
                     "title": "بائع",
                     "outlet": "18-Al_Khayyat Center",
@@ -952,7 +913,7 @@
             "original_name": "12-Al_Hamra Mall",
             "employees": [
                 {
-                    "id": 37.0,
+                    "id": 37,
                     "name": "محمد شافي كونابارامبان",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "12-Al_Hamra Mall",
@@ -991,7 +952,7 @@
                     "average_income": 7069.785
                 },
                 {
-                    "id": 3370.0,
+                    "id": 3370,
                     "name": "محمد نبيل بابات",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "12-Al_Hamra Mall",
@@ -1030,7 +991,7 @@
                     "average_income": 3808.898888888889
                 },
                 {
-                    "id": 3371.0,
+                    "id": 3371,
                     "name": "راشيد بوناكادان",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "12-Al_Hamra Mall",
@@ -1069,7 +1030,7 @@
                     "average_income": 3783.1883333333335
                 },
                 {
-                    "id": 4391.0,
+                    "id": 4391,
                     "name": "غيد ظاهر الشمري",
                     "title": "بائع",
                     "outlet": "12-Al_Hamra Mall",
@@ -1108,7 +1069,7 @@
                     "average_income": 6029.209
                 },
                 {
-                    "id": 4703.0,
+                    "id": 4703,
                     "name": "منى عبدالمحسن الزهراني",
                     "title": "بائع",
                     "outlet": "12-Al_Hamra Mall",
@@ -1147,12 +1108,12 @@
                     "average_income": 5523.0
                 },
                 {
-                    "id": 4714.0,
+                    "id": 4714,
                     "name": "ديمه مناور الحربي",
                     "title": "بائع",
                     "outlet": "12-Al_Hamra Mall",
                     "manager": "محمدكلو",
-                    "join_date": "2025-10-05",
+                    "join_date": "10/5/2025",
                     "years_of_service": "2 شهور",
                     "salary": 5000.0,
                     "total_commission": 0.0,
@@ -1186,12 +1147,12 @@
                     "average_income": 5219.0
                 },
                 {
-                    "id": 4750.0,
+                    "id": 4750,
                     "name": "مها غريب العمري",
                     "title": "بائع",
                     "outlet": "12-Al_Hamra Mall",
                     "manager": "محمدكلو",
-                    "join_date": "2025-11-02",
+                    "join_date": "11/2/2025",
                     "years_of_service": "1 شهور",
                     "salary": 5000.0,
                     "total_commission": 0.0,
@@ -1230,7 +1191,7 @@
             "original_name": "06-Red Sea Mall",
             "employees": [
                 {
-                    "id": 46.0,
+                    "id": 46,
                     "name": "كيمارو وليشاه قمرو",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "06-Red Sea Mall",
@@ -1269,7 +1230,7 @@
                     "average_income": 6037.080571428572
                 },
                 {
-                    "id": 488.0,
+                    "id": 488,
                     "name": "نزار فيسيار",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "06-Red Sea Mall",
@@ -1308,7 +1269,7 @@
                     "average_income": 5864.4875
                 },
                 {
-                    "id": 3034.0,
+                    "id": 3034,
                     "name": "اسماعيل عبد المالك خير الله",
                     "title": "بائع",
                     "outlet": "06-Red Sea Mall",
@@ -1347,7 +1308,7 @@
                     "average_income": 9351.9222
                 },
                 {
-                    "id": 3903.0,
+                    "id": 3903,
                     "name": "صفيه حمود الحربي",
                     "title": "مدير معرض",
                     "outlet": "06-Red Sea Mall",
@@ -1386,7 +1347,7 @@
                     "average_income": 8176.742174285715
                 },
                 {
-                    "id": 4007.0,
+                    "id": 4007,
                     "name": "بازيل ايداباتا",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "06-Red Sea Mall",
@@ -1425,7 +1386,7 @@
                     "average_income": 3177.21
                 },
                 {
-                    "id": 4167.0,
+                    "id": 4167,
                     "name": "محمد سنان",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "06-Red Sea Mall",
@@ -1464,13 +1425,13 @@
                     "average_income": 2500.0
                 },
                 {
-                    "id": 4175.0,
+                    "id": 4175,
                     "name": "اريج طلال اليماني",
                     "title": "بائع",
                     "outlet": "06-Red Sea Mall",
                     "manager": "المنطقة الغربية",
                     "join_date": "6/2/2024",
-                    "years_of_service": "1 و 6 شهور",
+                    "years_of_service": "1 و 7 شهور",
                     "salary": 4500.0,
                     "total_commission": 7674.0,
                     "total_sales": 843990.0,
@@ -1503,7 +1464,7 @@
                     "average_income": 5821.1466
                 },
                 {
-                    "id": 4330.0,
+                    "id": 4330,
                     "name": "اسرار صالح الزهراني",
                     "title": "بائع",
                     "outlet": "06-Red Sea Mall",
@@ -1542,13 +1503,13 @@
                     "average_income": 5765.79025
                 },
                 {
-                    "id": 4455.0,
+                    "id": 4455,
                     "name": "ريوف محمد القرني",
                     "title": "بائع",
                     "outlet": "06-Red Sea Mall",
                     "manager": "المنطقة الغربية",
                     "join_date": "2/2/2025",
-                    "years_of_service": "10 شهور",
+                    "years_of_service": "11 شهور",
                     "salary": 4500.0,
                     "total_commission": 7755.0,
                     "total_sales": 748276.0,
@@ -1581,7 +1542,7 @@
                     "average_income": 5788.865714285714
                 },
                 {
-                    "id": 4538.0,
+                    "id": 4538,
                     "name": "وجدان علي الغامدي",
                     "title": "بائع",
                     "outlet": "06-Red Sea Mall",
@@ -1620,7 +1581,7 @@
                     "average_income": 5834.5
                 },
                 {
-                    "id": 4581.0,
+                    "id": 4581,
                     "name": "نجاة محسن عارضي",
                     "title": "بائع",
                     "outlet": "06-Red Sea Mall",
@@ -1659,7 +1620,7 @@
                     "average_income": 6908.8
                 },
                 {
-                    "id": 4681.0,
+                    "id": 4681,
                     "name": "جنى علي الشمراني",
                     "title": "بائع",
                     "outlet": "06-Red Sea Mall",
@@ -1698,12 +1659,12 @@
                     "average_income": 4988.0
                 },
                 {
-                    "id": 4725.0,
+                    "id": 4725,
                     "name": "مياسه مروان عارف",
                     "title": "بائع",
                     "outlet": "06-Red Sea Mall",
                     "manager": "المنطقة الغربية",
-                    "join_date": "2025-10-09",
+                    "join_date": "10/9/2025",
                     "years_of_service": "2 شهور",
                     "salary": 4500.0,
                     "total_commission": 0.0,
@@ -1742,7 +1703,7 @@
             "original_name": "57-Sauq7",
             "employees": [
                 {
-                    "id": 51.0,
+                    "id": 51,
                     "name": "سليم شمس الدين",
                     "title": "مشرف معارض",
                     "outlet": "57-Sauq7",
@@ -1781,7 +1742,7 @@
                     "average_income": 7760.23255
                 },
                 {
-                    "id": 4418.0,
+                    "id": 4418,
                     "name": "مها شوقي القبلاوي",
                     "title": "بائع",
                     "outlet": "57-Sauq7",
@@ -1820,7 +1781,7 @@
                     "average_income": 4957.71925
                 },
                 {
-                    "id": 4445.0,
+                    "id": 4445,
                     "name": "عائشه فايع عسيري",
                     "title": "بائع",
                     "outlet": "57-Sauq7",
@@ -1859,7 +1820,7 @@
                     "average_income": 5465.566666666667
                 },
                 {
-                    "id": 4483.0,
+                    "id": 4483,
                     "name": "نجوم صالح العامري",
                     "title": "بائع",
                     "outlet": "57-Sauq7",
@@ -1898,7 +1859,7 @@
                     "average_income": 5228.75
                 },
                 {
-                    "id": 4532.0,
+                    "id": 4532,
                     "name": "علي خليل كنيد",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "57-Sauq7",
@@ -1937,12 +1898,12 @@
                     "average_income": 4695.0
                 },
                 {
-                    "id": 4718.0,
+                    "id": 4718,
                     "name": "محمود اسماعيل الرفاعي",
                     "title": "بائع",
                     "outlet": "57-Sauq7",
                     "manager": "عبيدة السباعي",
-                    "join_date": "2025-10-07",
+                    "join_date": "10/7/2025",
                     "years_of_service": "2 شهور",
                     "salary": 4500.0,
                     "total_commission": 0.0,
@@ -1981,7 +1942,7 @@
             "original_name": "47-Al-Nakheel Plaza",
             "employees": [
                 {
-                    "id": 67.0,
+                    "id": 67,
                     "name": "عبد القادر جعفر",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "47-Al-Nakheel Plaza",
@@ -2020,7 +1981,7 @@
                     "average_income": 4884.455555555555
                 },
                 {
-                    "id": 1593.0,
+                    "id": 1593,
                     "name": "نافاز باثاري",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "47-Al-Nakheel Plaza",
@@ -2059,7 +2020,7 @@
                     "average_income": 4143.6695
                 },
                 {
-                    "id": 3729.0,
+                    "id": 3729,
                     "name": "محمد مبشر تشيراياكوث",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "47-Al-Nakheel Plaza",
@@ -2098,7 +2059,7 @@
                     "average_income": 3293.63
                 },
                 {
-                    "id": 4649.0,
+                    "id": 4649,
                     "name": "شروق نواف العنزي",
                     "title": "بائع",
                     "outlet": "47-Al-Nakheel Plaza",
@@ -2137,7 +2098,7 @@
                     "average_income": 4891.0
                 },
                 {
-                    "id": 4656.0,
+                    "id": 4656,
                     "name": "تهاني مضحي العنزي",
                     "title": "بائع",
                     "outlet": "47-Al-Nakheel Plaza",
@@ -2176,7 +2137,7 @@
                     "average_income": 4815.0
                 },
                 {
-                    "id": 4664.0,
+                    "id": 4664,
                     "name": "نجد درزى الحربي",
                     "title": "مدير معرض",
                     "outlet": "47-Al-Nakheel Plaza",
@@ -2215,12 +2176,12 @@
                     "average_income": 5970.333333333333
                 },
                 {
-                    "id": 4760.0,
+                    "id": 4760,
                     "name": "بشرى محمد العنزي",
                     "title": "بائع",
                     "outlet": "47-Al-Nakheel Plaza",
                     "manager": "عبدالله السرداح",
-                    "join_date": "2025-11-09",
+                    "join_date": "11/9/2025",
                     "years_of_service": "1 شهور",
                     "salary": 4500.0,
                     "total_commission": 0.0,
@@ -2254,12 +2215,12 @@
                     "average_income": 4914.0
                 },
                 {
-                    "id": 4764.0,
+                    "id": 4764,
                     "name": "روان سعود الحربي",
                     "title": "بائع",
                     "outlet": "47-Al-Nakheel Plaza",
                     "manager": "عبدالله السرداح",
-                    "join_date": "2025-11-12",
+                    "join_date": "11/12/2025",
                     "years_of_service": "1 شهور",
                     "salary": 4500.0,
                     "total_commission": 0.0,
@@ -2298,13 +2259,13 @@
             "original_name": "23-Alia Mall Madinah",
             "employees": [
                 {
-                    "id": 90.0,
+                    "id": 90,
                     "name": "عبد الناظر اون يابا",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "23-Alia Mall Madinah",
                     "manager": "خليل الصانع",
                     "join_date": "3/7/2014",
-                    "years_of_service": "11 و 9 شهور",
+                    "years_of_service": "11 و 10 شهور",
                     "salary": 4000.0,
                     "total_commission": 4673.0,
                     "total_sales": 404399.0,
@@ -2337,7 +2298,7 @@
                     "average_income": 4539.843333333333
                 },
                 {
-                    "id": 936.0,
+                    "id": 936,
                     "name": "اشرف محمد المحمود",
                     "title": "مشرف معارض",
                     "outlet": "23-Alia Mall Madinah",
@@ -2376,7 +2337,7 @@
                     "average_income": 6360.4592
                 },
                 {
-                    "id": 3367.0,
+                    "id": 3367,
                     "name": "جيشاد اثمانيل",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "23-Alia Mall Madinah",
@@ -2415,7 +2376,7 @@
                     "average_income": 3169.6425
                 },
                 {
-                    "id": 3965.0,
+                    "id": 3965,
                     "name": "سيرين بشير هوساوي",
                     "title": "بائع",
                     "outlet": "23-Alia Mall Madinah",
@@ -2454,7 +2415,7 @@
                     "average_income": 5843.711111111111
                 },
                 {
-                    "id": 4245.0,
+                    "id": 4245,
                     "name": "موده سليمان الدويرعات",
                     "title": "بائع",
                     "outlet": "23-Alia Mall Madinah",
@@ -2493,7 +2454,7 @@
                     "average_income": 5802.9111111111115
                 },
                 {
-                    "id": 4555.0,
+                    "id": 4555,
                     "name": "بدرية عيد الجهني",
                     "title": "بائع",
                     "outlet": "23-Alia Mall Madinah",
@@ -2532,7 +2493,7 @@
                     "average_income": 5363.857142857143
                 },
                 {
-                    "id": 4567.0,
+                    "id": 4567,
                     "name": "هناء عبدالله العوفي",
                     "title": "بائع",
                     "outlet": "23-Alia Mall Madinah",
@@ -2571,7 +2532,7 @@
                     "average_income": 5891.333333333333
                 },
                 {
-                    "id": 4595.0,
+                    "id": 4595,
                     "name": "بسمه دخيل الله السهلي",
                     "title": "بائع",
                     "outlet": "23-Alia Mall Madinah",
@@ -2610,7 +2571,7 @@
                     "average_income": 5560.333333333333
                 },
                 {
-                    "id": 4673.0,
+                    "id": 4673,
                     "name": "رويده سالم الحربي",
                     "title": "بائع",
                     "outlet": "23-Alia Mall Madinah",
@@ -2649,12 +2610,12 @@
                     "average_income": 4990.0
                 },
                 {
-                    "id": 4757.0,
+                    "id": 4757,
                     "name": "اديب توفيق الزهراني",
                     "title": "بائع",
                     "outlet": "23-Alia Mall Madinah",
                     "manager": "خليل الصانع",
-                    "join_date": "2025-11-03",
+                    "join_date": "11/3/2025",
                     "years_of_service": "1 شهور",
                     "salary": 4500.0,
                     "total_commission": 0.0,
@@ -2688,12 +2649,12 @@
                     "average_income": 4594.0
                 },
                 {
-                    "id": 4791.0,
+                    "id": 4791,
                     "name": "وضحى مرزوق الجابري",
                     "title": "بائع",
                     "outlet": "23-Alia Mall Madinah",
                     "manager": "خليل الصانع",
-                    "join_date": "2025-12-21",
+                    "join_date": "12/21/2025",
                     "years_of_service": "أقل من شهر",
                     "salary": 4500.0,
                     "total_commission": 0.0,
@@ -2732,7 +2693,7 @@
             "original_name": "55- Jabl Omar",
             "employees": [
                 {
-                    "id": 158.0,
+                    "id": 158,
                     "name": "محمود محمد خير محجوب",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "55- Jabl Omar",
@@ -2771,7 +2732,7 @@
                     "average_income": 7213.92
                 },
                 {
-                    "id": 3332.0,
+                    "id": 3332,
                     "name": "محمد انصر",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "55- Jabl Omar",
@@ -2810,7 +2771,7 @@
                     "average_income": 3663.3999999999996
                 },
                 {
-                    "id": 4078.0,
+                    "id": 4078,
                     "name": "حسن عدنان طالب",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "55- Jabl Omar",
@@ -2849,7 +2810,7 @@
                     "average_income": 6964.16
                 },
                 {
-                    "id": 4098.0,
+                    "id": 4098,
                     "name": "روان محمد فطاني",
                     "title": "بائع",
                     "outlet": "55- Jabl Omar",
@@ -2888,7 +2849,7 @@
                     "average_income": 5385.291666666667
                 },
                 {
-                    "id": 4100.0,
+                    "id": 4100,
                     "name": "رضوان شياح",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "55- Jabl Omar",
@@ -2927,7 +2888,7 @@
                     "average_income": 6423.446666666667
                 },
                 {
-                    "id": 4122.0,
+                    "id": 4122,
                     "name": "محمد عرفان باثيرامانا",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "55- Jabl Omar",
@@ -2966,7 +2927,7 @@
                     "average_income": 2739.594285714286
                 },
                 {
-                    "id": 4147.0,
+                    "id": 4147,
                     "name": "ياسر غنايم الحربي",
                     "title": "بائع",
                     "outlet": "55- Jabl Omar",
@@ -3005,7 +2966,7 @@
                     "average_income": 5695.068571428571
                 },
                 {
-                    "id": 4242.0,
+                    "id": 4242,
                     "name": "محمد شمير كوندو بارامبيل",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "55- Jabl Omar",
@@ -3044,7 +3005,7 @@
                     "average_income": 2814.5
                 },
                 {
-                    "id": 4521.0,
+                    "id": 4521,
                     "name": "مراد عبدالله الطس",
                     "title": "بائع",
                     "outlet": "55- Jabl Omar",
@@ -3088,7 +3049,7 @@
             "original_name": "50-Meem Plaza Riyadh",
             "employees": [
                 {
-                    "id": 198.0,
+                    "id": 198,
                     "name": "معتصم اسماعيل علي العامري",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "50-Meem Plaza Riyadh",
@@ -3127,7 +3088,7 @@
                     "average_income": 7397.155555555555
                 },
                 {
-                    "id": 3402.0,
+                    "id": 3402,
                     "name": "احمد مجاب محمد المرتضى عيون السود",
                     "title": "بائع",
                     "outlet": "50-Meem Plaza Riyadh",
@@ -3166,7 +3127,7 @@
                     "average_income": 5976.0
                 },
                 {
-                    "id": 4533.0,
+                    "id": 4533,
                     "name": "مضر مختار الحسامي",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "50-Meem Plaza Riyadh",
@@ -3205,7 +3166,7 @@
                     "average_income": 7574.285714285714
                 },
                 {
-                    "id": 4678.0,
+                    "id": 4678,
                     "name": "عبدالفتاح محمد هيثم عزالدين",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "50-Meem Plaza Riyadh",
@@ -3244,7 +3205,7 @@
                     "average_income": 5790.0
                 },
                 {
-                    "id": 4705.0,
+                    "id": 4705,
                     "name": "مراد محمد مباركي",
                     "title": "بائع",
                     "outlet": "50-Meem Plaza Riyadh",
@@ -3288,7 +3249,7 @@
             "original_name": "36-Al jubail Mall",
             "employees": [
                 {
-                    "id": 240.0,
+                    "id": 240,
                     "name": "سيبودين بوكودان شهاب الدين",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "36-Al jubail Mall",
@@ -3327,7 +3288,7 @@
                     "average_income": 3846.902222222222
                 },
                 {
-                    "id": 4148.0,
+                    "id": 4148,
                     "name": "وعد هادي عبسي",
                     "title": "بائع",
                     "outlet": "36-Al jubail Mall",
@@ -3366,7 +3327,7 @@
                     "average_income": 5223.887777777778
                 },
                 {
-                    "id": 4206.0,
+                    "id": 4206,
                     "name": "عبد الرحمن زياد دندشلي",
                     "title": "بائع",
                     "outlet": "36-Al jubail Mall",
@@ -3405,7 +3366,7 @@
                     "average_income": 6655.834444444445
                 },
                 {
-                    "id": 4495.0,
+                    "id": 4495,
                     "name": "دانه سعيد الزهراني",
                     "title": "بائع",
                     "outlet": "36-Al jubail Mall",
@@ -3444,12 +3405,12 @@
                     "average_income": 5299.5
                 },
                 {
-                    "id": 4710.0,
+                    "id": 4710,
                     "name": "غرام احمد هاشمي",
                     "title": "بائع",
                     "outlet": "36-Al jubail Mall",
                     "manager": "جهاد ايوبي",
-                    "join_date": "2025-10-05",
+                    "join_date": "10/5/2025",
                     "years_of_service": "2 شهور",
                     "salary": 4500.0,
                     "total_commission": 0.0,
@@ -3488,7 +3449,7 @@
             "original_name": "17-Arar Othaim Mall",
             "employees": [
                 {
-                    "id": 262.0,
+                    "id": 262,
                     "name": "فهد كوتي شيراليل",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "17-Arar Othaim Mall",
@@ -3527,7 +3488,7 @@
                     "average_income": 3541.3333333333335
                 },
                 {
-                    "id": 4320.0,
+                    "id": 4320,
                     "name": "امل عويد العنزي",
                     "title": "بائع",
                     "outlet": "17-Arar Othaim Mall",
@@ -3566,7 +3527,7 @@
                     "average_income": 4826.2325
                 },
                 {
-                    "id": 4325.0,
+                    "id": 4325,
                     "name": "مريم منوي العنزي",
                     "title": "بائع",
                     "outlet": "17-Arar Othaim Mall",
@@ -3610,7 +3571,7 @@
             "original_name": "29-Al Nakheel Mall Riyadh",
             "employees": [
                 {
-                    "id": 263.0,
+                    "id": 263,
                     "name": "فيصل كوتارتودي بابو",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "29-Al Nakheel Mall Riyadh",
@@ -3649,7 +3610,7 @@
                     "average_income": 5281.571428571428
                 },
                 {
-                    "id": 3341.0,
+                    "id": 3341,
                     "name": "محمد فيفاز",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "29-Al Nakheel Mall Riyadh",
@@ -3688,7 +3649,7 @@
                     "average_income": 3705.86
                 },
                 {
-                    "id": 3539.0,
+                    "id": 3539,
                     "name": "محمد ارشد ايليداث",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "29-Al Nakheel Mall Riyadh",
@@ -3727,7 +3688,7 @@
                     "average_income": 3728.2914285714287
                 },
                 {
-                    "id": 4345.0,
+                    "id": 4345,
                     "name": "امجاد عبد العزيز ال عواض",
                     "title": "مدير معرض",
                     "outlet": "29-Al Nakheel Mall Riyadh",
@@ -3766,7 +3727,7 @@
                     "average_income": 6899.99375
                 },
                 {
-                    "id": 4564.0,
+                    "id": 4564,
                     "name": "اثير خالد شراحيلي",
                     "title": "بائع",
                     "outlet": "29-Al Nakheel Mall Riyadh",
@@ -3805,7 +3766,7 @@
                     "average_income": 6515.166666666667
                 },
                 {
-                    "id": 4670.0,
+                    "id": 4670,
                     "name": "سلمى علي مجرشي",
                     "title": "بائع",
                     "outlet": "29-Al Nakheel Mall Riyadh",
@@ -3844,12 +3805,12 @@
                     "average_income": 5681.333333333333
                 },
                 {
-                    "id": 4792.0,
+                    "id": 4792,
                     "name": "ساره سعد القحطاني",
                     "title": "بائع",
                     "outlet": "29-Al Nakheel Mall Riyadh",
                     "manager": "محمدكلو",
-                    "join_date": "2025-12-21",
+                    "join_date": "12/21/2025",
                     "years_of_service": "أقل من شهر",
                     "salary": 5000.0,
                     "total_commission": 0.0,
@@ -3883,12 +3844,12 @@
                     "average_income": 5000.0
                 },
                 {
-                    "id": 4794.0,
+                    "id": 4794,
                     "name": "ساره سالم الغنام",
                     "title": "بائع",
                     "outlet": "29-Al Nakheel Mall Riyadh",
                     "manager": "محمدكلو",
-                    "join_date": "2025-12-22",
+                    "join_date": "12/22/2025",
                     "years_of_service": "أقل من شهر",
                     "salary": 5000.0,
                     "total_commission": 0.0,
@@ -3922,12 +3883,12 @@
                     "average_income": 5000.0
                 },
                 {
-                    "id": 4755.0,
+                    "id": 4755,
                     "name": "شهير تاليكارا عبدالا تاليكارا",
                     "title": "بائع",
                     "outlet": "29-Al Nakheel Mall Riyadh",
                     "manager": "محمدكلو",
-                    "join_date": "2025-11-02",
+                    "join_date": "11/2/2025",
                     "years_of_service": "1 شهور",
                     "salary": 2500.0,
                     "total_commission": 0.0,
@@ -3966,7 +3927,7 @@
             "original_name": "20-Sitten Street Makkah",
             "employees": [
                 {
-                    "id": 284.0,
+                    "id": 284,
                     "name": "محمد عدنان محمد بشير الرزوق",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "20-Sitten Street Makkah",
@@ -4005,7 +3966,7 @@
                     "average_income": 6816.0428571428565
                 },
                 {
-                    "id": 296.0,
+                    "id": 296,
                     "name": "محمد علي كامل",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "20-Sitten Street Makkah",
@@ -4044,7 +4005,7 @@
                     "average_income": 7851.314285714286
                 },
                 {
-                    "id": 1366.0,
+                    "id": 1366,
                     "name": "ميار محمد ينبعاوي",
                     "title": "نائب مدير معرض",
                     "outlet": "20-Sitten Street Makkah",
@@ -4083,7 +4044,7 @@
                     "average_income": 7221.824444444444
                 },
                 {
-                    "id": 3614.0,
+                    "id": 3614,
                     "name": "غيداء ماجد الطس",
                     "title": "بائع",
                     "outlet": "20-Sitten Street Makkah",
@@ -4122,7 +4083,7 @@
                     "average_income": 5576.388888888889
                 },
                 {
-                    "id": 4085.0,
+                    "id": 4085,
                     "name": "فراس عبد الستار الخاني",
                     "title": "بائع",
                     "outlet": "20-Sitten Street Makkah",
@@ -4161,12 +4122,12 @@
                     "average_income": 6498.585
                 },
                 {
-                    "id": 4744.0,
+                    "id": 4744,
                     "name": "ابتهاج علي الصبحي",
                     "title": "بائع",
                     "outlet": "20-Sitten Street Makkah",
                     "manager": "رضوان عطيوي",
-                    "join_date": "2025-10-23",
+                    "join_date": "10/23/2025",
                     "years_of_service": "2 شهور",
                     "salary": 4500.0,
                     "total_commission": 0.0,
@@ -4205,7 +4166,7 @@
             "original_name": "08-Makkah Mall",
             "employees": [
                 {
-                    "id": 412.0,
+                    "id": 412,
                     "name": "عاصم عبد الودود الباكستاني",
                     "title": "مدير معرض",
                     "outlet": "08-Makkah Mall",
@@ -4244,13 +4205,13 @@
                     "average_income": 8931.531733333333
                 },
                 {
-                    "id": 1542.0,
+                    "id": 1542,
                     "name": "محمد شيبيل فازانكودون",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "08-Makkah Mall",
                     "manager": "رضوان عطيوي",
                     "join_date": "8/2/2021",
-                    "years_of_service": "4 و 4 شهور",
+                    "years_of_service": "4 و 5 شهور",
                     "salary": 2500.0,
                     "total_commission": 12495.0,
                     "total_sales": 830675.0,
@@ -4283,7 +4244,7 @@
                     "average_income": 4284.954285714286
                 },
                 {
-                    "id": 2676.0,
+                    "id": 2676,
                     "name": "منال عبد الله الحربي",
                     "title": "بائع",
                     "outlet": "08-Makkah Mall",
@@ -4322,7 +4283,7 @@
                     "average_income": 9114.850666666667
                 },
                 {
-                    "id": 2721.0,
+                    "id": 2721,
                     "name": "محمد ريشاد بارامبوران",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "08-Makkah Mall",
@@ -4361,13 +4322,13 @@
                     "average_income": 3517.96
                 },
                 {
-                    "id": 4029.0,
+                    "id": 4029,
                     "name": "نهاد عثمان هوساوي",
                     "title": "بائع",
                     "outlet": "08-Makkah Mall",
                     "manager": "رضوان عطيوي",
                     "join_date": "3/4/2024",
-                    "years_of_service": "1 و 9 شهور",
+                    "years_of_service": "1 و 10 شهور",
                     "salary": 5000.0,
                     "total_commission": 19525.0,
                     "total_sales": 1230371.0,
@@ -4400,7 +4361,7 @@
                     "average_income": 7169.408888888889
                 },
                 {
-                    "id": 4145.0,
+                    "id": 4145,
                     "name": "صالحه سعود القرشي",
                     "title": "بائع",
                     "outlet": "08-Makkah Mall",
@@ -4439,7 +4400,7 @@
                     "average_income": 6039.886666666666
                 },
                 {
-                    "id": 4171.0,
+                    "id": 4171,
                     "name": "انصل طه",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "08-Makkah Mall",
@@ -4478,13 +4439,13 @@
                     "average_income": 3388.8914285714286
                 },
                 {
-                    "id": 4468.0,
+                    "id": 4468,
                     "name": "مروج محمدرشاد خيرالله",
                     "title": "بائع",
                     "outlet": "08-Makkah Mall",
                     "manager": "رضوان عطيوي",
                     "join_date": "2/2/2025",
-                    "years_of_service": "10 شهور",
+                    "years_of_service": "11 شهور",
                     "salary": 4500.0,
                     "total_commission": 11535.0,
                     "total_sales": 843891.0,
@@ -4517,7 +4478,7 @@
                     "average_income": 5941.8225
                 },
                 {
-                    "id": 4479.0,
+                    "id": 4479,
                     "name": "صفيه خالد مظفر",
                     "title": "بائع",
                     "outlet": "08-Makkah Mall",
@@ -4556,7 +4517,7 @@
                     "average_income": 5785.9400000000005
                 },
                 {
-                    "id": 4601.0,
+                    "id": 4601,
                     "name": "حسان محمد العرافي",
                     "title": "بائع",
                     "outlet": "08-Makkah Mall",
@@ -4595,12 +4556,12 @@
                     "average_income": 6453.0
                 },
                 {
-                    "id": 4766.0,
+                    "id": 4766,
                     "name": "رنيم عاطي الذبياني",
                     "title": "بائع",
                     "outlet": "08-Makkah Mall",
                     "manager": "رضوان عطيوي",
-                    "join_date": "2025-11-13",
+                    "join_date": "11/13/2025",
                     "years_of_service": "1 شهور",
                     "salary": 4500.0,
                     "total_commission": 0.0,
@@ -4639,7 +4600,7 @@
             "original_name": "53-Al Basateen Mall",
             "employees": [
                 {
-                    "id": 762.0,
+                    "id": 762,
                     "name": "بلال المبيض",
                     "title": "مدير معرض",
                     "outlet": "53-Al Basateen Mall",
@@ -4678,7 +4639,7 @@
                     "average_income": 7449.870944444445
                 },
                 {
-                    "id": 4491.0,
+                    "id": 4491,
                     "name": "وعد عبدالرحمن توفيق",
                     "title": "بائع",
                     "outlet": "53-Al Basateen Mall",
@@ -4722,7 +4683,7 @@
             "original_name": "48 - Jeddah Park",
             "employees": [
                 {
-                    "id": 822.0,
+                    "id": 822,
                     "name": "عبد الغفور جهاد الأحمر",
                     "title": "مشرف معارض",
                     "outlet": "48 - Jeddah Park",
@@ -4761,7 +4722,7 @@
                     "average_income": 8210.770182
                 },
                 {
-                    "id": 916.0,
+                    "id": 916,
                     "name": "عبد السليم والنيغر",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "48 - Jeddah Park",
@@ -4800,7 +4761,7 @@
                     "average_income": 4947.157999999999
                 },
                 {
-                    "id": 2718.0,
+                    "id": 2718,
                     "name": "محمد شانيد ثيريالابيتا",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "48 - Jeddah Park",
@@ -4839,7 +4800,7 @@
                     "average_income": 3329.5119999999997
                 },
                 {
-                    "id": 3375.0,
+                    "id": 3375,
                     "name": "محمد شافي ناصر",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "48 - Jeddah Park",
@@ -4878,7 +4839,7 @@
                     "average_income": 3181.77
                 },
                 {
-                    "id": 3626.0,
+                    "id": 3626,
                     "name": "مزنة محمد الجهني",
                     "title": "بائع",
                     "outlet": "48 - Jeddah Park",
@@ -4917,13 +4878,13 @@
                     "average_income": 5717.9175
                 },
                 {
-                    "id": 3778.0,
+                    "id": 3778,
                     "name": "فاطمة إبراهيم الكيادي",
                     "title": "بائع",
                     "outlet": "48 - Jeddah Park",
                     "manager": "شريفة العمري",
                     "join_date": "10/1/2023",
-                    "years_of_service": "2 و 2 شهور",
+                    "years_of_service": "2 و 3 شهور",
                     "salary": 4500.0,
                     "total_commission": 5354.0,
                     "total_sales": 578049.0,
@@ -4956,7 +4917,7 @@
                     "average_income": 5195.93775
                 },
                 {
-                    "id": 4612.0,
+                    "id": 4612,
                     "name": "محمد علي الخيري",
                     "title": "بائع",
                     "outlet": "48 - Jeddah Park",
@@ -4995,7 +4956,7 @@
                     "average_income": 5529.6
                 },
                 {
-                    "id": 4615.0,
+                    "id": 4615,
                     "name": "نوال خضر علي",
                     "title": "بائع",
                     "outlet": "48 - Jeddah Park",
@@ -5034,7 +4995,7 @@
                     "average_income": 5197.4
                 },
                 {
-                    "id": 4635.0,
+                    "id": 4635,
                     "name": "عائشه محمد البركاتي",
                     "title": "بائع",
                     "outlet": "48 - Jeddah Park",
@@ -5073,7 +5034,7 @@
                     "average_income": 6068.25
                 },
                 {
-                    "id": 4696.0,
+                    "id": 4696,
                     "name": "اصاله عزيز القرني",
                     "title": "بائع",
                     "outlet": "48 - Jeddah Park",
@@ -5112,12 +5073,12 @@
                     "average_income": 5121.5
                 },
                 {
-                    "id": 4719.0,
+                    "id": 4719,
                     "name": "لينا عامر عسيري",
                     "title": "بائع",
                     "outlet": "48 - Jeddah Park",
                     "manager": "شريفة العمري",
-                    "join_date": "2025-10-08",
+                    "join_date": "10/8/2025",
                     "years_of_service": "2 شهور",
                     "salary": 4500.0,
                     "total_commission": 0.0,
@@ -5151,12 +5112,12 @@
                     "average_income": 4671.0
                 },
                 {
-                    "id": 4784.0,
+                    "id": 4784,
                     "name": "امل حمدان المالكي",
                     "title": "بائع",
                     "outlet": "48 - Jeddah Park",
                     "manager": "شريفة العمري",
-                    "join_date": "2025-12-16",
+                    "join_date": "12/16/2025",
                     "years_of_service": "أقل من شهر",
                     "salary": 4500.0,
                     "total_commission": 0.0,
@@ -5195,7 +5156,7 @@
             "original_name": "38-Al_Riyadh Park",
             "employees": [
                 {
-                    "id": 896.0,
+                    "id": 896,
                     "name": "سونير فاديل اليكويا",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "38-Al_Riyadh Park",
@@ -5234,7 +5195,7 @@
                     "average_income": 5721.445714285714
                 },
                 {
-                    "id": 897.0,
+                    "id": 897,
                     "name": "اشف بونور سنجدن",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "38-Al_Riyadh Park",
@@ -5273,7 +5234,7 @@
                     "average_income": 5586.324444444444
                 },
                 {
-                    "id": 3331.0,
+                    "id": 3331,
                     "name": "سالمانول فارس باركال",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "38-Al_Riyadh Park",
@@ -5312,7 +5273,7 @@
                     "average_income": 3565.142857142857
                 },
                 {
-                    "id": 3417.0,
+                    "id": 3417,
                     "name": "رنا رفيدي الشهري",
                     "title": "مدير معرض",
                     "outlet": "38-Al_Riyadh Park",
@@ -5351,7 +5312,7 @@
                     "average_income": 7842.6466625
                 },
                 {
-                    "id": 4428.0,
+                    "id": 4428,
                     "name": "ريماس علي شراحيلي",
                     "title": "بائع",
                     "outlet": "38-Al_Riyadh Park",
@@ -5390,7 +5351,7 @@
                     "average_income": 6073.475
                 },
                 {
-                    "id": 4429.0,
+                    "id": 4429,
                     "name": "هياء خالد السميح",
                     "title": "بائع",
                     "outlet": "38-Al_Riyadh Park",
@@ -5429,12 +5390,12 @@
                     "average_income": 5896.444444444444
                 },
                 {
-                    "id": 4738.0,
+                    "id": 4738,
                     "name": "حصه فهيد ال جمعان",
                     "title": "بائع",
                     "outlet": "38-Al_Riyadh Park",
                     "manager": "محمدكلو",
-                    "join_date": "2025-10-16",
+                    "join_date": "10/16/2025",
                     "years_of_service": "2 شهور",
                     "salary": 5000.0,
                     "total_commission": 0.0,
@@ -5473,7 +5434,7 @@
             "original_name": "21-Abha Al_Rashid Mall New",
             "employees": [
                 {
-                    "id": 902.0,
+                    "id": 902,
                     "name": "ساجد ثوتوكاد رشيد",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "21-Abha Al_Rashid Mall New",
@@ -5512,7 +5473,7 @@
                     "average_income": 4734.971428571429
                 },
                 {
-                    "id": 3731.0,
+                    "id": 3731,
                     "name": "محمد سابيل باثاري",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "21-Abha Al_Rashid Mall New",
@@ -5551,13 +5512,13 @@
                     "average_income": 3273.614375
                 },
                 {
-                    "id": 4193.0,
+                    "id": 4193,
                     "name": "عائشة علي القرني",
                     "title": "بائع",
                     "outlet": "21-Abha Al_Rashid Mall New",
                     "manager": "اماني عسيري",
                     "join_date": "6/2/2024",
-                    "years_of_service": "1 و 6 شهور",
+                    "years_of_service": "1 و 7 شهور",
                     "salary": 4500.0,
                     "total_commission": 3757.0,
                     "total_sales": 457157.0,
@@ -5590,7 +5551,7 @@
                     "average_income": 5151.961666666667
                 },
                 {
-                    "id": 4255.0,
+                    "id": 4255,
                     "name": "هيله هادي العليلي",
                     "title": "بائع",
                     "outlet": "21-Abha Al_Rashid Mall New",
@@ -5629,13 +5590,13 @@
                     "average_income": 7065.784285714286
                 },
                 {
-                    "id": 4285.0,
+                    "id": 4285,
                     "name": "ميعاد جابر الريثى",
                     "title": "بائع",
                     "outlet": "21-Abha Al_Rashid Mall New",
                     "manager": "اماني عسيري",
                     "join_date": "8/1/2024",
-                    "years_of_service": "1 و 4 شهور",
+                    "years_of_service": "1 و 5 شهور",
                     "salary": 4500.0,
                     "total_commission": 7332.0,
                     "total_sales": 634453.0,
@@ -5668,7 +5629,7 @@
                     "average_income": 5441.085
                 },
                 {
-                    "id": 4306.0,
+                    "id": 4306,
                     "name": "اماني احمد عسيري",
                     "title": "مدير معرض",
                     "outlet": "21-Abha Al_Rashid Mall New",
@@ -5707,7 +5668,7 @@
                     "average_income": 8347.1084375
                 },
                 {
-                    "id": 4349.0,
+                    "id": 4349,
                     "name": "فوز فائز القرني",
                     "title": "بائع",
                     "outlet": "21-Abha Al_Rashid Mall New",
@@ -5746,7 +5707,7 @@
                     "average_income": 6061.99625
                 },
                 {
-                    "id": 4539.0,
+                    "id": 4539,
                     "name": "ضي عبدالله الزايدي",
                     "title": "بائع",
                     "outlet": "21-Abha Al_Rashid Mall New",
@@ -5785,7 +5746,7 @@
                     "average_income": 6100.166666666667
                 },
                 {
-                    "id": 4663.0,
+                    "id": 4663,
                     "name": "رحمه احمد القرني",
                     "title": "بائع",
                     "outlet": "21-Abha Al_Rashid Mall New",
@@ -5824,12 +5785,12 @@
                     "average_income": 5326.0
                 },
                 {
-                    "id": 4741.0,
+                    "id": 4741,
                     "name": "رنا محمد الاسمري",
                     "title": "بائع",
                     "outlet": "21-Abha Al_Rashid Mall New",
                     "manager": "اماني عسيري",
-                    "join_date": "2025-10-20",
+                    "join_date": "10/20/2025",
                     "years_of_service": "2 شهور",
                     "salary": 4500.0,
                     "total_commission": 0.0,
@@ -5868,7 +5829,7 @@
             "original_name": "27-Dhahran Mall khobar",
             "employees": [
                 {
-                    "id": 909.0,
+                    "id": 909,
                     "name": "سافاد شيرونيل مجيد",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "27-Dhahran Mall khobar",
@@ -5907,7 +5868,7 @@
                     "average_income": 6457.0234
                 },
                 {
-                    "id": 2816.0,
+                    "id": 2816,
                     "name": "مروة مبارك الشعلان",
                     "title": "مدير معرض",
                     "outlet": "27-Dhahran Mall khobar",
@@ -5946,7 +5907,7 @@
                     "average_income": 9690.443
                 },
                 {
-                    "id": 3280.0,
+                    "id": 3280,
                     "name": "سلمان فارس فايل",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "27-Dhahran Mall khobar",
@@ -5985,7 +5946,7 @@
                     "average_income": 4983.874
                 },
                 {
-                    "id": 3727.0,
+                    "id": 3727,
                     "name": "شابير مولياثودي",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "27-Dhahran Mall khobar",
@@ -6024,7 +5985,7 @@
                     "average_income": 2978.3055555555557
                 },
                 {
-                    "id": 3896.0,
+                    "id": 3896,
                     "name": "مها محمد الشهري",
                     "title": "بائع",
                     "outlet": "27-Dhahran Mall khobar",
@@ -6063,7 +6024,7 @@
                     "average_income": 7108.323
                 },
                 {
-                    "id": 4119.0,
+                    "id": 4119,
                     "name": "اثير عمر عسيري",
                     "title": "بائع",
                     "outlet": "27-Dhahran Mall khobar",
@@ -6102,7 +6063,7 @@
                     "average_income": 7265.1445
                 },
                 {
-                    "id": 4159.0,
+                    "id": 4159,
                     "name": "ميساء عبد اللطيف محمد",
                     "title": "بائع",
                     "outlet": "27-Dhahran Mall khobar",
@@ -6141,7 +6102,7 @@
                     "average_income": 7532.6774000000005
                 },
                 {
-                    "id": 4246.0,
+                    "id": 4246,
                     "name": "محمد ناصر زاهر",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "27-Dhahran Mall khobar",
@@ -6180,7 +6141,7 @@
                     "average_income": 2808.75
                 },
                 {
-                    "id": 4384.0,
+                    "id": 4384,
                     "name": "بشرى هاشم الناشري",
                     "title": "بائع",
                     "outlet": "27-Dhahran Mall khobar",
@@ -6219,7 +6180,7 @@
                     "average_income": 6830.753
                 },
                 {
-                    "id": 4505.0,
+                    "id": 4505,
                     "name": "حنان ناصر الشاهين",
                     "title": "بائع",
                     "outlet": "27-Dhahran Mall khobar",
@@ -6258,12 +6219,12 @@
                     "average_income": 7866.625
                 },
                 {
-                    "id": 4776.0,
+                    "id": 4776,
                     "name": "عذاري عبدالله القحطاني",
                     "title": "بائع",
                     "outlet": "27-Dhahran Mall khobar",
                     "manager": "جهاد ايوبي",
-                    "join_date": "2025-11-23",
+                    "join_date": "11/23/2025",
                     "years_of_service": "1 شهور",
                     "salary": 5000.0,
                     "total_commission": 0.0,
@@ -6302,7 +6263,7 @@
             "original_name": "07-Arab Mall",
             "employees": [
                 {
-                    "id": 933.0,
+                    "id": 933,
                     "name": "حارس كفران كوندان",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "07-Arab Mall",
@@ -6341,7 +6302,7 @@
                     "average_income": 3725.9525
                 },
                 {
-                    "id": 2744.0,
+                    "id": 2744,
                     "name": "عبدالباري كابوكونان",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "07-Arab Mall",
@@ -6380,7 +6341,7 @@
                     "average_income": 4760.5888888888885
                 },
                 {
-                    "id": 3625.0,
+                    "id": 3625,
                     "name": "بشاير محمد الجهني",
                     "title": "بائع",
                     "outlet": "07-Arab Mall",
@@ -6419,7 +6380,7 @@
                     "average_income": 6092.609777777778
                 },
                 {
-                    "id": 4151.0,
+                    "id": 4151,
                     "name": "يونس عبدالبديع مليباري",
                     "title": "مدير معرض",
                     "outlet": "07-Arab Mall",
@@ -6458,7 +6419,7 @@
                     "average_income": 6540.707
                 },
                 {
-                    "id": 4162.0,
+                    "id": 4162,
                     "name": "محمد صالح بازامكولايان",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "07-Arab Mall",
@@ -6497,7 +6458,7 @@
                     "average_income": 2953.4433333333336
                 },
                 {
-                    "id": 4377.0,
+                    "id": 4377,
                     "name": "حنان علي الغامدي",
                     "title": "بائع",
                     "outlet": "07-Arab Mall",
@@ -6536,7 +6497,7 @@
                     "average_income": 5401.937777777777
                 },
                 {
-                    "id": 4488.0,
+                    "id": 4488,
                     "name": "ريماس دخيل الله المحورى",
                     "title": "بائع",
                     "outlet": "07-Arab Mall",
@@ -6575,7 +6536,7 @@
                     "average_income": 5133.725
                 },
                 {
-                    "id": 4630.0,
+                    "id": 4630,
                     "name": "شدى يحي عسيري",
                     "title": "بائع",
                     "outlet": "07-Arab Mall",
@@ -6614,7 +6575,7 @@
                     "average_income": 5188.0
                 },
                 {
-                    "id": 4645.0,
+                    "id": 4645,
                     "name": "خالد محمد النهاري",
                     "title": "بائع",
                     "outlet": "07-Arab Mall",
@@ -6658,7 +6619,7 @@
             "original_name": "13-Al-Yasmin Mall",
             "employees": [
                 {
-                    "id": 966.0,
+                    "id": 966,
                     "name": "ادريس شافي بانقاسيري",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "13-Al-Yasmin Mall",
@@ -6697,7 +6658,7 @@
                     "average_income": 3741.667
                 },
                 {
-                    "id": 1088.0,
+                    "id": 1088,
                     "name": "زين ال عبيد ايشه",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "13-Al-Yasmin Mall",
@@ -6736,7 +6697,7 @@
                     "average_income": 4388.1016
                 },
                 {
-                    "id": 3057.0,
+                    "id": 3057,
                     "name": "افنان حمد السواط",
                     "title": "مدير معرض",
                     "outlet": "13-Al-Yasmin Mall",
@@ -6775,7 +6736,7 @@
                     "average_income": 6954.679182
                 },
                 {
-                    "id": 4385.0,
+                    "id": 4385,
                     "name": "انوار ابراهيم السريحي",
                     "title": "بائع",
                     "outlet": "13-Al-Yasmin Mall",
@@ -6814,13 +6775,13 @@
                     "average_income": 5228.292
                 },
                 {
-                    "id": 4464.0,
+                    "id": 4464,
                     "name": "نوره محمد المولد",
                     "title": "بائع",
                     "outlet": "13-Al-Yasmin Mall",
                     "manager": "المنطقة الغربية",
                     "join_date": "2/2/2025",
-                    "years_of_service": "10 شهور",
+                    "years_of_service": "11 شهور",
                     "salary": 4500.0,
                     "total_commission": 8124.0,
                     "total_sales": 674619.0,
@@ -6853,7 +6814,7 @@
                     "average_income": 5438.02
                 },
                 {
-                    "id": 4520.0,
+                    "id": 4520,
                     "name": "محمد حارس كنهرا كدفن",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "13-Al-Yasmin Mall",
@@ -6892,7 +6853,7 @@
                     "average_income": 3226.75
                 },
                 {
-                    "id": 4605.0,
+                    "id": 4605,
                     "name": "منار عبدالله القرني",
                     "title": "بائع",
                     "outlet": "13-Al-Yasmin Mall",
@@ -6931,12 +6892,12 @@
                     "average_income": 4839.6
                 },
                 {
-                    "id": 4752.0,
+                    "id": 4752,
                     "name": "خديجه هادي مجش",
                     "title": "بائع",
                     "outlet": "13-Al-Yasmin Mall",
                     "manager": "المنطقة الغربية",
-                    "join_date": "2025-11-02",
+                    "join_date": "11/2/2025",
                     "years_of_service": "1 شهور",
                     "salary": 4500.0,
                     "total_commission": 0.0,
@@ -6970,12 +6931,12 @@
                     "average_income": 4836.0
                 },
                 {
-                    "id": 4781.0,
+                    "id": 4781,
                     "name": "نوال فهد المطيري",
                     "title": "بائع",
                     "outlet": "13-Al-Yasmin Mall",
                     "manager": "المنطقة الغربية",
-                    "join_date": "2025-12-14",
+                    "join_date": "12/14/2025",
                     "years_of_service": "أقل من شهر",
                     "salary": 4500.0,
                     "total_commission": 0.0,
@@ -7014,7 +6975,7 @@
             "original_name": "14-Al Kamal Mall",
             "employees": [
                 {
-                    "id": 1124.0,
+                    "id": 1124,
                     "name": "انس عبد القادر نوايا",
                     "title": "بائع",
                     "outlet": "14-Al Kamal Mall",
@@ -7053,7 +7014,7 @@
                     "average_income": 5964.463333333333
                 },
                 {
-                    "id": 4340.0,
+                    "id": 4340,
                     "name": "هيلا سفر الحارثي",
                     "title": "بائع",
                     "outlet": "14-Al Kamal Mall",
@@ -7092,7 +7053,7 @@
                     "average_income": 5011.556125
                 },
                 {
-                    "id": 4366.0,
+                    "id": 4366,
                     "name": "نوره بكر هوساوي",
                     "title": "بائع",
                     "outlet": "14-Al Kamal Mall",
@@ -7131,7 +7092,7 @@
                     "average_income": 5082.82375
                 },
                 {
-                    "id": 4369.0,
+                    "id": 4369,
                     "name": "ابتسام علي الزهراني",
                     "title": "بائع",
                     "outlet": "14-Al Kamal Mall",
@@ -7170,12 +7131,12 @@
                     "average_income": 5056.3925
                 },
                 {
-                    "id": 4789.0,
+                    "id": 4789,
                     "name": "عبير صالح القرني",
                     "title": "بائع",
                     "outlet": "14-Al Kamal Mall",
                     "manager": "منطقة الطائف",
-                    "join_date": "2025-12-18",
+                    "join_date": "12/18/2025",
                     "years_of_service": "أقل من شهر",
                     "salary": 4500.0,
                     "total_commission": 0.0,
@@ -7214,7 +7175,7 @@
             "original_name": "42-Dareen Mall Dammam",
             "employees": [
                 {
-                    "id": 1271.0,
+                    "id": 1271,
                     "name": "فدوى راشد الدوسري",
                     "title": "نائب مدير معرض",
                     "outlet": "42-Dareen Mall Dammam",
@@ -7253,7 +7214,7 @@
                     "average_income": 6805.173333333333
                 },
                 {
-                    "id": 2738.0,
+                    "id": 2738,
                     "name": "سافاد ثوتوكاد عبدالقادر كونجي",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "42-Dareen Mall Dammam",
@@ -7292,7 +7253,7 @@
                     "average_income": 3717.142857142857
                 },
                 {
-                    "id": 3665.0,
+                    "id": 3665,
                     "name": "لطيفة فهد الدوسري",
                     "title": "بائع",
                     "outlet": "42-Dareen Mall Dammam",
@@ -7331,7 +7292,7 @@
                     "average_income": 6950.475555555556
                 },
                 {
-                    "id": 4170.0,
+                    "id": 4170,
                     "name": "ابراهيم بودشا",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "42-Dareen Mall Dammam",
@@ -7370,7 +7331,7 @@
                     "average_income": 3449.477142857143
                 },
                 {
-                    "id": 4506.0,
+                    "id": 4506,
                     "name": "ليلى مكي الراشد",
                     "title": "بائع",
                     "outlet": "42-Dareen Mall Dammam",
@@ -7409,7 +7370,7 @@
                     "average_income": 6226.857142857143
                 },
                 {
-                    "id": 4517.0,
+                    "id": 4517,
                     "name": "ولاء جعفر ال معيوف",
                     "title": "بائع",
                     "outlet": "42-Dareen Mall Dammam",
@@ -7448,7 +7409,7 @@
                     "average_income": 6481.857142857143
                 },
                 {
-                    "id": 4651.0,
+                    "id": 4651,
                     "name": "اماني سعد المالكي",
                     "title": "بائع",
                     "outlet": "42-Dareen Mall Dammam",
@@ -7492,7 +7453,7 @@
             "original_name": "19-Hail Othaim Mall",
             "employees": [
                 {
-                    "id": 1485.0,
+                    "id": 1485,
                     "name": "الجوهره سليمان العنزي",
                     "title": "بائع",
                     "outlet": "19-Hail Othaim Mall",
@@ -7531,7 +7492,7 @@
                     "average_income": 5558.14
                 },
                 {
-                    "id": 2680.0,
+                    "id": 2680,
                     "name": "فايزة صالح الرشيدي",
                     "title": "بائع",
                     "outlet": "19-Hail Othaim Mall",
@@ -7570,7 +7531,7 @@
                     "average_income": 4996.138888888889
                 },
                 {
-                    "id": 2752.0,
+                    "id": 2752,
                     "name": "عيدة جبل الشمري",
                     "title": "نائب مدير معرض",
                     "outlet": "19-Hail Othaim Mall",
@@ -7609,7 +7570,7 @@
                     "average_income": 5054.02
                 },
                 {
-                    "id": 3333.0,
+                    "id": 3333,
                     "name": "منهاج الونجال",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "19-Hail Othaim Mall",
@@ -7648,7 +7609,7 @@
                     "average_income": 2857.89125
                 },
                 {
-                    "id": 3537.0,
+                    "id": 3537,
                     "name": "محمد محسن كلاي",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "19-Hail Othaim Mall",
@@ -7687,13 +7648,13 @@
                     "average_income": 3054.94875
                 },
                 {
-                    "id": 3780.0,
+                    "id": 3780,
                     "name": "شيخة لافي الرشيدي",
                     "title": "بائع",
                     "outlet": "19-Hail Othaim Mall",
                     "manager": "عبدالله السرداح",
                     "join_date": "10/1/2023",
-                    "years_of_service": "2 و 2 شهور",
+                    "years_of_service": "2 و 3 شهور",
                     "salary": 4500.0,
                     "total_commission": 4509.0,
                     "total_sales": 593676.0,
@@ -7726,12 +7687,12 @@
                     "average_income": 5000.995555555555
                 },
                 {
-                    "id": 4746.0,
+                    "id": 4746,
                     "name": "مرام محسن النماصي",
                     "title": "بائع",
                     "outlet": "19-Hail Othaim Mall",
                     "manager": "عبدالله السرداح",
-                    "join_date": "2025-10-23",
+                    "join_date": "10/23/2025",
                     "years_of_service": "2 شهور",
                     "salary": 4500.0,
                     "total_commission": 0.0,
@@ -7770,13 +7731,13 @@
             "original_name": "30-Tala Mall Riyadh",
             "employees": [
                 {
-                    "id": 1543.0,
+                    "id": 1543,
                     "name": "محمد صالح ثيروفالابيتا",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "30-Tala Mall Riyadh",
                     "manager": "عبدالله السرداح",
                     "join_date": "8/2/2021",
-                    "years_of_service": "4 و 4 شهور",
+                    "years_of_service": "4 و 5 شهور",
                     "salary": 3000.0,
                     "total_commission": 11762.0,
                     "total_sales": 907817.0,
@@ -7809,7 +7770,7 @@
                     "average_income": 4803.793125
                 },
                 {
-                    "id": 4668.0,
+                    "id": 4668,
                     "name": "جميله محمد سفياني",
                     "title": "بائع",
                     "outlet": "30-Tala Mall Riyadh",
@@ -7848,12 +7809,12 @@
                     "average_income": 6508.0
                 },
                 {
-                    "id": 4734.0,
+                    "id": 4734,
                     "name": "مهند محمد ال مرعي",
                     "title": "بائع",
                     "outlet": "30-Tala Mall Riyadh",
                     "manager": "عبدالله السرداح",
-                    "join_date": "2025-10-15",
+                    "join_date": "10/15/2025",
                     "years_of_service": "2 شهور",
                     "salary": 5000.0,
                     "total_commission": 0.0,
@@ -7887,12 +7848,12 @@
                     "average_income": 7105.0
                 },
                 {
-                    "id": 4774.0,
+                    "id": 4774,
                     "name": "ريناد صديق الامير",
                     "title": "بائع",
                     "outlet": "30-Tala Mall Riyadh",
                     "manager": "عبدالله السرداح",
-                    "join_date": "2025-11-23",
+                    "join_date": "11/23/2025",
                     "years_of_service": "1 شهور",
                     "salary": 5000.0,
                     "total_commission": 0.0,
@@ -7931,13 +7892,13 @@
             "original_name": "04-Andalos Mall",
             "employees": [
                 {
-                    "id": 1544.0,
+                    "id": 1544,
                     "name": "محمد شاجاهان فالاثودي",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "04-Andalos Mall",
                     "manager": "عبيدة السباعي",
                     "join_date": "8/2/2021",
-                    "years_of_service": "4 و 4 شهور",
+                    "years_of_service": "4 و 5 شهور",
                     "salary": 2500.0,
                     "total_commission": 8779.0,
                     "total_sales": 599965.0,
@@ -7970,7 +7931,7 @@
                     "average_income": 3395.2110000000002
                 },
                 {
-                    "id": 2804.0,
+                    "id": 2804,
                     "name": "ارشاد بالبيتا",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "04-Andalos Mall",
@@ -8009,7 +7970,7 @@
                     "average_income": 3352.1444444444446
                 },
                 {
-                    "id": 3339.0,
+                    "id": 3339,
                     "name": "اشف انصاري نانمبرا",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "04-Andalos Mall",
@@ -8048,7 +8009,7 @@
                     "average_income": 3374.1755555555555
                 },
                 {
-                    "id": 3701.0,
+                    "id": 3701,
                     "name": "مروج هادي فلقي",
                     "title": "بائع",
                     "outlet": "04-Andalos Mall",
@@ -8087,7 +8048,7 @@
                     "average_income": 5515.344
                 },
                 {
-                    "id": 4025.0,
+                    "id": 4025,
                     "name": "أسماء عبدالله الحجوري",
                     "title": "مدير معرض",
                     "outlet": "04-Andalos Mall",
@@ -8126,7 +8087,7 @@
                     "average_income": 7326.1318
                 },
                 {
-                    "id": 4318.0,
+                    "id": 4318,
                     "name": "نوره علي القرني",
                     "title": "بائع",
                     "outlet": "04-Andalos Mall",
@@ -8165,7 +8126,7 @@
                     "average_income": 5811.6
                 },
                 {
-                    "id": 4523.0,
+                    "id": 4523,
                     "name": "نهله محمد عطرجي",
                     "title": "بائع",
                     "outlet": "04-Andalos Mall",
@@ -8204,12 +8165,12 @@
                     "average_income": 5519.5
                 },
                 {
-                    "id": 4723.0,
+                    "id": 4723,
                     "name": "سماهر علي موذن",
                     "title": "بائع",
                     "outlet": "04-Andalos Mall",
                     "manager": "عبيدة السباعي",
-                    "join_date": "2025-10-08",
+                    "join_date": "10/8/2025",
                     "years_of_service": "2 شهور",
                     "salary": 4500.0,
                     "total_commission": 0.0,
@@ -8243,12 +8204,12 @@
                     "average_income": 4958.0
                 },
                 {
-                    "id": 4726.0,
+                    "id": 4726,
                     "name": "فاطمه سعد القرني",
                     "title": "بائع",
                     "outlet": "04-Andalos Mall",
                     "manager": "عبيدة السباعي",
-                    "join_date": "2025-10-09",
+                    "join_date": "10/9/2025",
                     "years_of_service": "2 شهور",
                     "salary": 4500.0,
                     "total_commission": 0.0,
@@ -8282,12 +8243,12 @@
                     "average_income": 4828.0
                 },
                 {
-                    "id": 4788.0,
+                    "id": 4788,
                     "name": "اراده خضر عسيري",
                     "title": "بائع",
                     "outlet": "04-Andalos Mall",
                     "manager": "عبيدة السباعي",
-                    "join_date": "2025-12-18",
+                    "join_date": "12/18/2025",
                     "years_of_service": "أقل من شهر",
                     "salary": 4500.0,
                     "total_commission": 0.0,
@@ -8326,13 +8287,13 @@
             "original_name": "09-Al-Salam Mall",
             "employees": [
                 {
-                    "id": 1545.0,
+                    "id": 1545,
                     "name": "محمد علي بانشيبالا",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "09-Al-Salam Mall",
                     "manager": "عبيدة السباعي",
                     "join_date": "8/2/2021",
-                    "years_of_service": "4 و 4 شهور",
+                    "years_of_service": "4 و 5 شهور",
                     "salary": 2500.0,
                     "total_commission": 6446.0,
                     "total_sales": 504723.0,
@@ -8365,7 +8326,7 @@
                     "average_income": 3225.6005555555557
                 },
                 {
-                    "id": 3734.0,
+                    "id": 3734,
                     "name": "محمد هشير ماليكال",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "09-Al-Salam Mall",
@@ -8404,7 +8365,7 @@
                     "average_income": 3101.491111111111
                 },
                 {
-                    "id": 3898.0,
+                    "id": 3898,
                     "name": "ملاك وحيد باز",
                     "title": "بائع",
                     "outlet": "09-Al-Salam Mall",
@@ -8443,7 +8404,7 @@
                     "average_income": 5468.505444444444
                 },
                 {
-                    "id": 4141.0,
+                    "id": 4141,
                     "name": "نزيهه خالد شاعري",
                     "title": "مدير معرض",
                     "outlet": "09-Al-Salam Mall",
@@ -8482,7 +8443,7 @@
                     "average_income": 6963.50625
                 },
                 {
-                    "id": 4583.0,
+                    "id": 4583,
                     "name": "ليلى عبده ديباجي",
                     "title": "بائع",
                     "outlet": "09-Al-Salam Mall",
@@ -8521,12 +8482,12 @@
                     "average_income": 5401.5
                 },
                 {
-                    "id": 4722.0,
+                    "id": 4722,
                     "name": "الاء صالح العمري",
                     "title": "بائع",
                     "outlet": "09-Al-Salam Mall",
                     "manager": "عبيدة السباعي",
-                    "join_date": "2025-10-08",
+                    "join_date": "10/8/2025",
                     "years_of_service": "2 شهور",
                     "salary": 4500.0,
                     "total_commission": 0.0,
@@ -8560,12 +8521,12 @@
                     "average_income": 4826.0
                 },
                 {
-                    "id": 4786.0,
+                    "id": 4786,
                     "name": "رهام صالح الجدعاني",
                     "title": "بائع",
                     "outlet": "09-Al-Salam Mall",
                     "manager": "عبيدة السباعي",
-                    "join_date": "2025-12-18",
+                    "join_date": "12/18/2025",
                     "years_of_service": "أقل من شهر",
                     "salary": 4500.0,
                     "total_commission": 0.0,
@@ -8604,13 +8565,13 @@
             "original_name": "11-Jouri Mall",
             "employees": [
                 {
-                    "id": 1546.0,
+                    "id": 1546,
                     "name": "ساجاد يونين ميليكالاثيل",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "11-Jouri Mall",
                     "manager": "منطقة الطائف",
                     "join_date": "8/2/2021",
-                    "years_of_service": "4 و 4 شهور",
+                    "years_of_service": "4 و 5 شهور",
                     "salary": 2500.0,
                     "total_commission": 564.0,
                     "total_sales": 156873.0,
@@ -8643,7 +8604,7 @@
                     "average_income": 2617.691
                 },
                 {
-                    "id": 4099.0,
+                    "id": 4099,
                     "name": "شاديك علي بوراكال",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "11-Jouri Mall",
@@ -8682,7 +8643,7 @@
                     "average_income": 2580.0
                 },
                 {
-                    "id": 4259.0,
+                    "id": 4259,
                     "name": "جمانة عبدالله العسيري",
                     "title": "بائع",
                     "outlet": "11-Jouri Mall",
@@ -8721,7 +8682,7 @@
                     "average_income": 5272.737142857143
                 },
                 {
-                    "id": 4557.0,
+                    "id": 4557,
                     "name": "رهف منصور منصوري",
                     "title": "بائع",
                     "outlet": "11-Jouri Mall",
@@ -8760,7 +8721,7 @@
                     "average_income": 5529.333333333333
                 },
                 {
-                    "id": 4559.0,
+                    "id": 4559,
                     "name": "حنان هلال الثقفي",
                     "title": "بائع",
                     "outlet": "11-Jouri Mall",
@@ -8799,7 +8760,7 @@
                     "average_income": 5453.666666666667
                 },
                 {
-                    "id": 4593.0,
+                    "id": 4593,
                     "name": "رزان مقبول الفهمي",
                     "title": "بائع",
                     "outlet": "11-Jouri Mall",
@@ -8838,7 +8799,7 @@
                     "average_income": 5382.5
                 },
                 {
-                    "id": 4599.0,
+                    "id": 4599,
                     "name": "زهراء سالم الشمراني",
                     "title": "بائع",
                     "outlet": "11-Jouri Mall",
@@ -8877,12 +8838,12 @@
                     "average_income": 5325.4
                 },
                 {
-                    "id": 4777.0,
+                    "id": 4777,
                     "name": "متاع صالح العتيبي",
                     "title": "بائع",
                     "outlet": "11-Jouri Mall",
                     "manager": "منطقة الطائف",
-                    "join_date": "2025-11-24",
+                    "join_date": "11/24/2025",
                     "years_of_service": "1 شهور",
                     "salary": 4500.0,
                     "total_commission": 0.0,
@@ -8921,7 +8882,7 @@
             "original_name": "22-Tabuk Park",
             "employees": [
                 {
-                    "id": 1556.0,
+                    "id": 1556,
                     "name": "هنادي كريم العنزي",
                     "title": "بائع",
                     "outlet": "22-Tabuk Park",
@@ -8960,13 +8921,13 @@
                     "average_income": 7114.515
                 },
                 {
-                    "id": 3711.0,
+                    "id": 3711,
                     "name": "تركي إبراهيم رمضان",
                     "title": "مدير معرض",
                     "outlet": "22-Tabuk Park",
                     "manager": "خليل الصانع",
                     "join_date": "9/1/2023",
-                    "years_of_service": "2 و 3 شهور",
+                    "years_of_service": "2 و 4 شهور",
                     "salary": 5500.0,
                     "total_commission": 12867.0,
                     "total_sales": 685002.0,
@@ -8999,7 +8960,7 @@
                     "average_income": 7164.805625
                 },
                 {
-                    "id": 3733.0,
+                    "id": 3733,
                     "name": "محمد اصف ماركاسيري",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "22-Tabuk Park",
@@ -9038,7 +8999,7 @@
                     "average_income": 3232.62
                 },
                 {
-                    "id": 3986.0,
+                    "id": 3986,
                     "name": "نوره حمدان البلوي",
                     "title": "بائع",
                     "outlet": "22-Tabuk Park",
@@ -9077,7 +9038,7 @@
                     "average_income": 5717.72375
                 },
                 {
-                    "id": 4169.0,
+                    "id": 4169,
                     "name": "محمد ارشد",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "22-Tabuk Park",
@@ -9116,7 +9077,7 @@
                     "average_income": 3037.06
                 },
                 {
-                    "id": 4209.0,
+                    "id": 4209,
                     "name": "امجاد ظافر الشهري",
                     "title": "بائع",
                     "outlet": "22-Tabuk Park",
@@ -9155,7 +9116,7 @@
                     "average_income": 5633.4506249999995
                 },
                 {
-                    "id": 4563.0,
+                    "id": 4563,
                     "name": "رغد عبدالله الزهراني",
                     "title": "بائع",
                     "outlet": "22-Tabuk Park",
@@ -9194,7 +9155,7 @@
                     "average_income": 5620.0
                 },
                 {
-                    "id": 4574.0,
+                    "id": 4574,
                     "name": "نجوى عوض المطيري",
                     "title": "بائع",
                     "outlet": "22-Tabuk Park",
@@ -9233,12 +9194,12 @@
                     "average_income": 5588.4
                 },
                 {
-                    "id": 4793.0,
+                    "id": 4793,
                     "name": "الهنوف مسلم العطوي",
                     "title": "بائع",
                     "outlet": "22-Tabuk Park",
                     "manager": "خليل الصانع",
-                    "join_date": "2025-12-22",
+                    "join_date": "12/22/2025",
                     "years_of_service": "أقل من شهر",
                     "salary": 4500.0,
                     "total_commission": 0.0,
@@ -9277,7 +9238,7 @@
             "original_name": "28-Al Nakheel Mall Dammam",
             "employees": [
                 {
-                    "id": 1587.0,
+                    "id": 1587,
                     "name": "شمس الدين كونغاث",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "28-Al Nakheel Mall Dammam",
@@ -9316,7 +9277,7 @@
                     "average_income": 3570.198888888889
                 },
                 {
-                    "id": 1635.0,
+                    "id": 1635,
                     "name": "سميه احمد الخالدي",
                     "title": "بائع",
                     "outlet": "28-Al Nakheel Mall Dammam",
@@ -9355,7 +9316,7 @@
                     "average_income": 6676.406
                 },
                 {
-                    "id": 2714.0,
+                    "id": 2714,
                     "name": "محمد رشيق ثيرلامباتا",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "28-Al Nakheel Mall Dammam",
@@ -9394,7 +9355,7 @@
                     "average_income": 3727.68
                 },
                 {
-                    "id": 3410.0,
+                    "id": 3410,
                     "name": "فيصل احمد العمري",
                     "title": "مدير معرض",
                     "outlet": "28-Al Nakheel Mall Dammam",
@@ -9433,7 +9394,7 @@
                     "average_income": 7693.153
                 },
                 {
-                    "id": 3917.0,
+                    "id": 3917,
                     "name": "بشاير سعد البيشي",
                     "title": "بائع",
                     "outlet": "28-Al Nakheel Mall Dammam",
@@ -9472,7 +9433,7 @@
                     "average_income": 5952.239
                 },
                 {
-                    "id": 4446.0,
+                    "id": 4446,
                     "name": "أناس كازونغوم توتاتيل",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "28-Al Nakheel Mall Dammam",
@@ -9511,13 +9472,13 @@
                     "average_income": 2556.5
                 },
                 {
-                    "id": 4461.0,
+                    "id": 4461,
                     "name": "سناء كامل الزهراني",
                     "title": "بائع",
                     "outlet": "28-Al Nakheel Mall Dammam",
                     "manager": "جهاد ايوبي",
                     "join_date": "2/2/2025",
-                    "years_of_service": "10 شهور",
+                    "years_of_service": "11 شهور",
                     "salary": 5500.0,
                     "total_commission": 12332.0,
                     "total_sales": 959053.0,
@@ -9550,7 +9511,7 @@
                     "average_income": 6951.428888888889
                 },
                 {
-                    "id": 4624.0,
+                    "id": 4624,
                     "name": "ملاك صالح الغامدي",
                     "title": "بائع",
                     "outlet": "28-Al Nakheel Mall Dammam",
@@ -9589,7 +9550,7 @@
                     "average_income": 5672.5
                 },
                 {
-                    "id": 4701.0,
+                    "id": 4701,
                     "name": "فاطمه حسين المويل",
                     "title": "بائع",
                     "outlet": "28-Al Nakheel Mall Dammam",
@@ -9628,12 +9589,12 @@
                     "average_income": 5324.0
                 },
                 {
-                    "id": 4745.0,
+                    "id": 4745,
                     "name": "اثير بندر السبيعي",
                     "title": "بائع",
                     "outlet": "28-Al Nakheel Mall Dammam",
                     "manager": "جهاد ايوبي",
-                    "join_date": "2025-10-23",
+                    "join_date": "10/23/2025",
                     "years_of_service": "2 شهور",
                     "salary": 5000.0,
                     "total_commission": 0.0,
@@ -9672,7 +9633,7 @@
             "original_name": "16-Ehsa Othaim Mall",
             "employees": [
                 {
-                    "id": 1589.0,
+                    "id": 1589,
                     "name": "محمد جونيس ميمبار",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "16-Ehsa Othaim Mall",
@@ -9711,7 +9672,7 @@
                     "average_income": 3782.525
                 },
                 {
-                    "id": 3628.0,
+                    "id": 3628,
                     "name": "اشجان عبدالله العشوان",
                     "title": "مدير معرض",
                     "outlet": "16-Ehsa Othaim Mall",
@@ -9750,7 +9711,7 @@
                     "average_income": 9640.052266666666
                 },
                 {
-                    "id": 4118.0,
+                    "id": 4118,
                     "name": "نوف ناصر الصايغ",
                     "title": "بائع",
                     "outlet": "16-Ehsa Othaim Mall",
@@ -9789,7 +9750,7 @@
                     "average_income": 5986.011111111111
                 },
                 {
-                    "id": 4231.0,
+                    "id": 4231,
                     "name": "روان فهد العطوان",
                     "title": "بائع",
                     "outlet": "16-Ehsa Othaim Mall",
@@ -9828,7 +9789,7 @@
                     "average_income": 6384.6177777777775
                 },
                 {
-                    "id": 4359.0,
+                    "id": 4359,
                     "name": "هناء عبد العزيز المدوح",
                     "title": "بائع",
                     "outlet": "16-Ehsa Othaim Mall",
@@ -9867,7 +9828,7 @@
                     "average_income": 6310.5888888888885
                 },
                 {
-                    "id": 4452.0,
+                    "id": 4452,
                     "name": "غدير علي العبدالعزيز",
                     "title": "بائع",
                     "outlet": "16-Ehsa Othaim Mall",
@@ -9906,7 +9867,7 @@
                     "average_income": 6513.4725
                 },
                 {
-                    "id": 4516.0,
+                    "id": 4516,
                     "name": "حوراء محمد العبدالله",
                     "title": "بائع",
                     "outlet": "16-Ehsa Othaim Mall",
@@ -9945,7 +9906,7 @@
                     "average_income": 6172.0
                 },
                 {
-                    "id": 4692.0,
+                    "id": 4692,
                     "name": "محمد سلمان كوناتشالي",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "16-Ehsa Othaim Mall",
@@ -9984,12 +9945,12 @@
                     "average_income": 2500.0
                 },
                 {
-                    "id": 4728.0,
+                    "id": 4728,
                     "name": "ارون بابو",
                     "title": "بائع",
                     "outlet": "16-Ehsa Othaim Mall",
                     "manager": "جهاد ايوبي",
-                    "join_date": "2025-10-13",
+                    "join_date": "10/13/2025",
                     "years_of_service": "2 شهور",
                     "salary": 2500.0,
                     "total_commission": 0.0,
@@ -10028,7 +9989,7 @@
             "original_name": "25-Rabwa Othaim Mall",
             "employees": [
                 {
-                    "id": 1590.0,
+                    "id": 1590,
                     "name": "محمد نسيل كونغاث",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "25-Rabwa Othaim Mall",
@@ -10067,7 +10028,7 @@
                     "average_income": 3135.2544444444443
                 },
                 {
-                    "id": 3728.0,
+                    "id": 3728,
                     "name": "سالمانول فارس مداثيبارمبيل",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "25-Rabwa Othaim Mall",
@@ -10106,7 +10067,7 @@
                     "average_income": 2944.0
                 },
                 {
-                    "id": 4577.0,
+                    "id": 4577,
                     "name": "رنيم سعيد اليزيدي",
                     "title": "بائع",
                     "outlet": "25-Rabwa Othaim Mall",
@@ -10145,7 +10106,7 @@
                     "average_income": 5466.4
                 },
                 {
-                    "id": 4586.0,
+                    "id": 4586,
                     "name": "ريناد عبدالله أبو شال",
                     "title": "بائع",
                     "outlet": "25-Rabwa Othaim Mall",
@@ -10184,12 +10145,12 @@
                     "average_income": 5437.6
                 },
                 {
-                    "id": 4763.0,
+                    "id": 4763,
                     "name": "فنون عبدالله الحربي",
                     "title": "بائع",
                     "outlet": "25-Rabwa Othaim Mall",
                     "manager": "عبد الجليل الحبال",
-                    "join_date": "2025-11-11",
+                    "join_date": "11/11/2025",
                     "years_of_service": "1 شهور",
                     "salary": 5000.0,
                     "total_commission": 0.0,
@@ -10223,12 +10184,12 @@
                     "average_income": 5000.0
                 },
                 {
-                    "id": 4773.0,
+                    "id": 4773,
                     "name": "نهى فهد الحمدان",
                     "title": "بائع",
                     "outlet": "25-Rabwa Othaim Mall",
                     "manager": "عبد الجليل الحبال",
-                    "join_date": "2025-11-20",
+                    "join_date": "11/20/2025",
                     "years_of_service": "1 شهور",
                     "salary": 5000.0,
                     "total_commission": 0.0,
@@ -10267,7 +10228,7 @@
             "original_name": "39-Salam Mall Riyadh",
             "employees": [
                 {
-                    "id": 1592.0,
+                    "id": 1592,
                     "name": "محسن بوياكودي",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "39-Salam Mall Riyadh",
@@ -10306,7 +10267,7 @@
                     "average_income": 3446.8011428571426
                 },
                 {
-                    "id": 2821.0,
+                    "id": 2821,
                     "name": "عبدالسليم كابيل",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "39-Salam Mall Riyadh",
@@ -10345,7 +10306,7 @@
                     "average_income": 3385.8942857142856
                 },
                 {
-                    "id": 4408.0,
+                    "id": 4408,
                     "name": "روابي عباس الهوساوي",
                     "title": "بائع",
                     "outlet": "39-Salam Mall Riyadh",
@@ -10384,13 +10345,13 @@
                     "average_income": 6572.395
                 },
                 {
-                    "id": 4465.0,
+                    "id": 4465,
                     "name": "حليمه حسن الشراحي",
                     "title": "بائع",
                     "outlet": "39-Salam Mall Riyadh",
                     "manager": "عبد الجليل الحبال",
                     "join_date": "2/2/2025",
-                    "years_of_service": "10 شهور",
+                    "years_of_service": "11 شهور",
                     "salary": 5000.0,
                     "total_commission": 4431.0,
                     "total_sales": 419469.0,
@@ -10423,7 +10384,7 @@
                     "average_income": 5572.4825
                 },
                 {
-                    "id": 4585.0,
+                    "id": 4585,
                     "name": "بشاير محمد الحميدي",
                     "title": "بائع",
                     "outlet": "39-Salam Mall Riyadh",
@@ -10462,7 +10423,7 @@
                     "average_income": 5778.166666666667
                 },
                 {
-                    "id": 4661.0,
+                    "id": 4661,
                     "name": "فاطمه معدى البيشي",
                     "title": "بائع",
                     "outlet": "39-Salam Mall Riyadh",
@@ -10506,7 +10467,7 @@
             "original_name": "54-THE VILLAGE",
             "employees": [
                 {
-                    "id": 2720.0,
+                    "id": 2720,
                     "name": "اسفق بوثاني",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "54-THE VILLAGE",
@@ -10545,7 +10506,7 @@
                     "average_income": 3390.786
                 },
                 {
-                    "id": 3672.0,
+                    "id": 3672,
                     "name": "مشاعل عمري الصحفي",
                     "title": "بائع",
                     "outlet": "54-THE VILLAGE",
@@ -10584,7 +10545,7 @@
                     "average_income": 7589.0560000000005
                 },
                 {
-                    "id": 3735.0,
+                    "id": 3735,
                     "name": "شاجهان كورمبوتوثوديل",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "54-THE VILLAGE",
@@ -10623,7 +10584,7 @@
                     "average_income": 3259.0175
                 },
                 {
-                    "id": 3826.0,
+                    "id": 3826,
                     "name": "غادة عبد الرحمن البلوي",
                     "title": "بائع",
                     "outlet": "54-THE VILLAGE",
@@ -10662,7 +10623,7 @@
                     "average_income": 6159.536
                 },
                 {
-                    "id": 3963.0,
+                    "id": 3963,
                     "name": "رجوى محمد السفري",
                     "title": "بائع",
                     "outlet": "54-THE VILLAGE",
@@ -10701,7 +10662,7 @@
                     "average_income": 5903.642
                 },
                 {
-                    "id": 4149.0,
+                    "id": 4149,
                     "name": "شمسير الي نشيكدن محمد علي",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "54-THE VILLAGE",
@@ -10740,7 +10701,7 @@
                     "average_income": 3262.918222222222
                 },
                 {
-                    "id": 4194.0,
+                    "id": 4194,
                     "name": "امل محمد كرتيل",
                     "title": "بائع",
                     "outlet": "54-THE VILLAGE",
@@ -10779,7 +10740,7 @@
                     "average_income": 6896.142
                 },
                 {
-                    "id": 4414.0,
+                    "id": 4414,
                     "name": "سامودين بيلاكال",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "54-THE VILLAGE",
@@ -10818,7 +10779,7 @@
                     "average_income": 2500.0
                 },
                 {
-                    "id": 4541.0,
+                    "id": 4541,
                     "name": "نجود عوض الشهري",
                     "title": "بائع",
                     "outlet": "54-THE VILLAGE",
@@ -10857,12 +10818,12 @@
                     "average_income": 6092.875
                 },
                 {
-                    "id": 4782.0,
+                    "id": 4782,
                     "name": "معالي ناصر المطيري",
                     "title": "بائع",
                     "outlet": "54-THE VILLAGE",
                     "manager": "المنطقة الغربية",
-                    "join_date": "2025-12-15",
+                    "join_date": "12/15/2025",
                     "years_of_service": "أقل من شهر",
                     "salary": 4500.0,
                     "total_commission": 0.0,
@@ -10896,12 +10857,12 @@
                     "average_income": 4500.0
                 },
                 {
-                    "id": 4783.0,
+                    "id": 4783,
                     "name": "نوف احمد الغامدي",
                     "title": "بائع",
                     "outlet": "54-THE VILLAGE",
                     "manager": "المنطقة الغربية",
-                    "join_date": "2025-12-15",
+                    "join_date": "12/15/2025",
                     "years_of_service": "أقل من شهر",
                     "salary": 4500.0,
                     "total_commission": 0.0,
@@ -10940,7 +10901,7 @@
             "original_name": "51-Park Avenue Riyadh",
             "employees": [
                 {
-                    "id": 2739.0,
+                    "id": 2739,
                     "name": "محمد شاهيد شيروكارا",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "51-Park Avenue Riyadh",
@@ -10979,7 +10940,7 @@
                     "average_income": 4018.2233333333334
                 },
                 {
-                    "id": 4396.0,
+                    "id": 4396,
                     "name": "غيداء احمد مكي",
                     "title": "بائع",
                     "outlet": "51-Park Avenue Riyadh",
@@ -11018,7 +10979,7 @@
                     "average_income": 5863.441333333333
                 },
                 {
-                    "id": 4493.0,
+                    "id": 4493,
                     "name": "حنان سالم الحربي",
                     "title": "مدير معرض",
                     "outlet": "51-Park Avenue Riyadh",
@@ -11057,7 +11018,7 @@
                     "average_income": 7260.4
                 },
                 {
-                    "id": 4603.0,
+                    "id": 4603,
                     "name": "سلطان حارس كالاباتيل",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "51-Park Avenue Riyadh",
@@ -11096,7 +11057,7 @@
                     "average_income": 2988.5
                 },
                 {
-                    "id": 4667.0,
+                    "id": 4667,
                     "name": "شيخة مسعود القحطاني",
                     "title": "بائع",
                     "outlet": "51-Park Avenue Riyadh",
@@ -11140,7 +11101,7 @@
             "original_name": "46-Khaleej Mall Riyadh",
             "employees": [
                 {
-                    "id": 2743.0,
+                    "id": 2743,
                     "name": "محمد ايرشاد كوناكاتيل",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "46-Khaleej Mall Riyadh",
@@ -11179,7 +11140,7 @@
                     "average_income": 3673.306285714286
                 },
                 {
-                    "id": 3588.0,
+                    "id": 3588,
                     "name": "محمد مونبار",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "46-Khaleej Mall Riyadh",
@@ -11218,7 +11179,7 @@
                     "average_income": 3987.66295
                 },
                 {
-                    "id": 4514.0,
+                    "id": 4514,
                     "name": "خالد عبدالرحمن خندش",
                     "title": "مشرف معارض",
                     "outlet": "46-Khaleej Mall Riyadh",
@@ -11257,7 +11218,7 @@
                     "average_income": 7239.714285714286
                 },
                 {
-                    "id": 4640.0,
+                    "id": 4640,
                     "name": "وفاء فرج عبسي",
                     "title": "بائع",
                     "outlet": "46-Khaleej Mall Riyadh",
@@ -11296,7 +11257,7 @@
                     "average_income": 6037.75
                 },
                 {
-                    "id": 4707.0,
+                    "id": 4707,
                     "name": "أيوب علي كونجو علي كونجو",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "46-Khaleej Mall Riyadh",
@@ -11335,12 +11296,12 @@
                     "average_income": 2684.0
                 },
                 {
-                    "id": 4767.0,
+                    "id": 4767,
                     "name": "نوره فهد الحمدان",
                     "title": "بائع",
                     "outlet": "46-Khaleej Mall Riyadh",
                     "manager": "محمدكلو",
-                    "join_date": "2025-11-16",
+                    "join_date": "11/16/2025",
                     "years_of_service": "1 شهور",
                     "salary": 5000.0,
                     "total_commission": 0.0,
@@ -11379,7 +11340,7 @@
             "original_name": "44-Al-Jouf Center",
             "employees": [
                 {
-                    "id": 2792.0,
+                    "id": 2792,
                     "name": "شاهير كالاثيل",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "44-Al-Jouf Center",
@@ -11418,7 +11379,7 @@
                     "average_income": 2646.7566666666667
                 },
                 {
-                    "id": 4199.0,
+                    "id": 4199,
                     "name": "امل الشن الرويلي",
                     "title": "بائع",
                     "outlet": "44-Al-Jouf Center",
@@ -11457,7 +11418,7 @@
                     "average_income": 4669.106666666667
                 },
                 {
-                    "id": 4308.0,
+                    "id": 4308,
                     "name": "خديجة كرداس الرويلي",
                     "title": "بائع",
                     "outlet": "44-Al-Jouf Center",
@@ -11501,13 +11462,13 @@
             "original_name": "26-Al-Noor Mall Madinah",
             "employees": [
                 {
-                    "id": 2796.0,
+                    "id": 2796,
                     "name": "محمد شفيق ميلاباثودي",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "26-Al-Noor Mall Madinah",
                     "manager": "خليل الصانع",
                     "join_date": "11/30/2021",
-                    "years_of_service": "4",
+                    "years_of_service": "4 و 1 شهور",
                     "salary": 2500.0,
                     "total_commission": 4509.0,
                     "total_sales": 519484.0,
@@ -11540,7 +11501,7 @@
                     "average_income": 3144.197142857143
                 },
                 {
-                    "id": 2802.0,
+                    "id": 2802,
                     "name": "انس ملاذ",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "26-Al-Noor Mall Madinah",
@@ -11579,7 +11540,7 @@
                     "average_income": 2853.2975
                 },
                 {
-                    "id": 4431.0,
+                    "id": 4431,
                     "name": "في سعيد ال مشافي",
                     "title": "بائع",
                     "outlet": "26-Al-Noor Mall Madinah",
@@ -11618,7 +11579,7 @@
                     "average_income": 5761.682222222222
                 },
                 {
-                    "id": 4575.0,
+                    "id": 4575,
                     "name": "اصف بونبارا",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "26-Al-Noor Mall Madinah",
@@ -11657,7 +11618,7 @@
                     "average_income": 2763.3333333333335
                 },
                 {
-                    "id": 4600.0,
+                    "id": 4600,
                     "name": "خلود شديد الرفاعي",
                     "title": "بائع",
                     "outlet": "26-Al-Noor Mall Madinah",
@@ -11696,12 +11657,12 @@
                     "average_income": 5572.4
                 },
                 {
-                    "id": 4762.0,
+                    "id": 4762,
                     "name": "رهف علي الحربي",
                     "title": "بائع",
                     "outlet": "26-Al-Noor Mall Madinah",
                     "manager": "خليل الصانع",
-                    "join_date": "2025-11-11",
+                    "join_date": "11/11/2025",
                     "years_of_service": "1 شهور",
                     "salary": 4500.0,
                     "total_commission": 0.0,
@@ -11740,7 +11701,7 @@
             "original_name": "05-Haifa Mall",
             "employees": [
                 {
-                    "id": 2801.0,
+                    "id": 2801,
                     "name": "محمد بشير فيلانشولا",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "05-Haifa Mall",
@@ -11779,7 +11740,7 @@
                     "average_income": 2886.363888888889
                 },
                 {
-                    "id": 3335.0,
+                    "id": 3335,
                     "name": "دانيش مون كولان",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "05-Haifa Mall",
@@ -11818,7 +11779,7 @@
                     "average_income": 3721.028888888889
                 },
                 {
-                    "id": 3881.0,
+                    "id": 3881,
                     "name": "رنيم احمد السميري",
                     "title": "بائع",
                     "outlet": "05-Haifa Mall",
@@ -11857,7 +11818,7 @@
                     "average_income": 5336.9175
                 },
                 {
-                    "id": 4190.0,
+                    "id": 4190,
                     "name": "مرام محمد الزبيدي",
                     "title": "بائع",
                     "outlet": "05-Haifa Mall",
@@ -11896,7 +11857,7 @@
                     "average_income": 5316.0742222222225
                 },
                 {
-                    "id": 4546.0,
+                    "id": 4546,
                     "name": "احمد يوسف عقيلي",
                     "title": "بائع",
                     "outlet": "05-Haifa Mall",
@@ -11935,12 +11896,12 @@
                     "average_income": 5266.857142857143
                 },
                 {
-                    "id": 4751.0,
+                    "id": 4751,
                     "name": "نوف سعد القرني",
                     "title": "بائع",
                     "outlet": "05-Haifa Mall",
                     "manager": "شريفة العمري",
-                    "join_date": "2025-11-02",
+                    "join_date": "11/2/2025",
                     "years_of_service": "1 شهور",
                     "salary": 4500.0,
                     "total_commission": 0.0,
@@ -11979,7 +11940,7 @@
             "original_name": "24-Yanbu Dana Mall",
             "employees": [
                 {
-                    "id": 3245.0,
+                    "id": 3245,
                     "name": "رنيم ابراهيم الحربي",
                     "title": "بائع",
                     "outlet": "24-Yanbu Dana Mall",
@@ -12018,7 +11979,7 @@
                     "average_income": 5213.277142857143
                 },
                 {
-                    "id": 3345.0,
+                    "id": 3345,
                     "name": "ثاجودين باثنقادي",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "24-Yanbu Dana Mall",
@@ -12057,7 +12018,7 @@
                     "average_income": 3018.91
                 },
                 {
-                    "id": 4415.0,
+                    "id": 4415,
                     "name": "سيف الدين علي كوتي بوتكولاان",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "24-Yanbu Dana Mall",
@@ -12096,7 +12057,7 @@
                     "average_income": 2841.0
                 },
                 {
-                    "id": 4534.0,
+                    "id": 4534,
                     "name": "هاجر ربيع العلوني",
                     "title": "بائع",
                     "outlet": "24-Yanbu Dana Mall",
@@ -12135,7 +12096,7 @@
                     "average_income": 5000.166666666667
                 },
                 {
-                    "id": 4535.0,
+                    "id": 4535,
                     "name": "رندا سالم الجهني",
                     "title": "بائع",
                     "outlet": "24-Yanbu Dana Mall",
@@ -12174,7 +12135,7 @@
                     "average_income": 5061.666666666667
                 },
                 {
-                    "id": 4676.0,
+                    "id": 4676,
                     "name": "وسن عبدالله السلمي",
                     "title": "بائع",
                     "outlet": "24-Yanbu Dana Mall",
@@ -12218,7 +12179,7 @@
             "original_name": "45- Riyadh Gallery Mall",
             "employees": [
                 {
-                    "id": 3338.0,
+                    "id": 3338,
                     "name": "محمد ريشاد ايرشان فيتيل",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "45- Riyadh Gallery Mall",
@@ -12257,7 +12218,7 @@
                     "average_income": 3510.8714285714286
                 },
                 {
-                    "id": 3737.0,
+                    "id": 3737,
                     "name": "محمد شفيق بالاكال كوتي",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "45- Riyadh Gallery Mall",
@@ -12296,7 +12257,7 @@
                     "average_income": 3434.684
                 },
                 {
-                    "id": 3890.0,
+                    "id": 3890,
                     "name": "عادل منور فاريا تودي",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "45- Riyadh Gallery Mall",
@@ -12335,7 +12296,7 @@
                     "average_income": 3212.2342857142858
                 },
                 {
-                    "id": 4561.0,
+                    "id": 4561,
                     "name": "منيره عبدالاله الشعيل",
                     "title": "بائع",
                     "outlet": "45- Riyadh Gallery Mall",
@@ -12374,7 +12335,7 @@
                     "average_income": 5774.0
                 },
                 {
-                    "id": 4689.0,
+                    "id": 4689,
                     "name": "رنا سعد العنزي",
                     "title": "بائع",
                     "outlet": "45- Riyadh Gallery Mall",
@@ -12413,7 +12374,7 @@
                     "average_income": 5272.0
                 },
                 {
-                    "id": 4706.0,
+                    "id": 4706,
                     "name": "رهف عمر الزهراني",
                     "title": "بائع",
                     "outlet": "45- Riyadh Gallery Mall",
@@ -12452,12 +12413,12 @@
                     "average_income": 5212.5
                 },
                 {
-                    "id": 4785.0,
+                    "id": 4785,
                     "name": "اريج عبيد الاكلبي",
                     "title": "بائع",
                     "outlet": "45- Riyadh Gallery Mall",
                     "manager": "محمدكلو",
-                    "join_date": "2025-12-16",
+                    "join_date": "12/16/2025",
                     "years_of_service": "أقل من شهر",
                     "salary": 5000.0,
                     "total_commission": 0.0,
@@ -12496,7 +12457,7 @@
             "original_name": "52-Al_Baha Mall",
             "employees": [
                 {
-                    "id": 3368.0,
+                    "id": 3368,
                     "name": "محمد مصطفى كورمبي",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "52-Al_Baha Mall",
@@ -12535,7 +12496,7 @@
                     "average_income": 3457.6666666666665
                 },
                 {
-                    "id": 4312.0,
+                    "id": 4312,
                     "name": "ساره سعد الحارثي",
                     "title": "بائع",
                     "outlet": "52-Al_Baha Mall",
@@ -12574,7 +12535,7 @@
                     "average_income": 5101.7
                 },
                 {
-                    "id": 4401.0,
+                    "id": 4401,
                     "name": "نورة صالح الغامدي",
                     "title": "بائع",
                     "outlet": "52-Al_Baha Mall",
@@ -12613,12 +12574,12 @@
                     "average_income": 5085.52
                 },
                 {
-                    "id": 4787.0,
+                    "id": 4787,
                     "name": "عهد سعيد الغامدي",
                     "title": "بائع",
                     "outlet": "52-Al_Baha Mall",
                     "manager": "اماني عسيري",
-                    "join_date": "2025-12-18",
+                    "join_date": "12/18/2025",
                     "years_of_service": "أقل من شهر",
                     "salary": 4500.0,
                     "total_commission": 0.0,
@@ -12657,7 +12618,7 @@
             "original_name": "40-Hayat Mall Riyad",
             "employees": [
                 {
-                    "id": 3373.0,
+                    "id": 3373,
                     "name": "محمد رافسال فينجاسيري",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "40-Hayat Mall Riyad",
@@ -12696,7 +12657,7 @@
                     "average_income": 3586.5777777777776
                 },
                 {
-                    "id": 4198.0,
+                    "id": 4198,
                     "name": "دول دول لينشاد كوراكونان",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "40-Hayat Mall Riyad",
@@ -12735,7 +12696,7 @@
                     "average_income": 3274.475
                 },
                 {
-                    "id": 4674.0,
+                    "id": 4674,
                     "name": "أمواج علي قحل",
                     "title": "بائع",
                     "outlet": "40-Hayat Mall Riyad",
@@ -12774,7 +12735,7 @@
                     "average_income": 5941.0
                 },
                 {
-                    "id": 4684.0,
+                    "id": 4684,
                     "name": "عريب فرج القحطاني",
                     "title": "بائع",
                     "outlet": "40-Hayat Mall Riyad",
@@ -12813,12 +12774,12 @@
                     "average_income": 5729.0
                 },
                 {
-                    "id": 4769.0,
+                    "id": 4769,
                     "name": "ساره صالح الطحيني",
                     "title": "بائع",
                     "outlet": "40-Hayat Mall Riyad",
                     "manager": "عبدالله السرداح",
-                    "join_date": "2025-11-18",
+                    "join_date": "11/18/2025",
                     "years_of_service": "1 شهور",
                     "salary": 5000.0,
                     "total_commission": 0.0,
@@ -12857,7 +12818,7 @@
             "original_name": "49-AlAhsa Mall",
             "employees": [
                 {
-                    "id": 3495.0,
+                    "id": 3495,
                     "name": "نورة فوزي الوسمي",
                     "title": "بائع",
                     "outlet": "49-AlAhsa Mall",
@@ -12896,7 +12857,7 @@
                     "average_income": 6089.539
                 },
                 {
-                    "id": 3765.0,
+                    "id": 3765,
                     "name": "منى مرزوق الشلوي",
                     "title": "مدير معرض",
                     "outlet": "49-AlAhsa Mall",
@@ -12935,7 +12896,7 @@
                     "average_income": 6947.6506
                 },
                 {
-                    "id": 4172.0,
+                    "id": 4172,
                     "name": "مرشد بادوفل",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "49-AlAhsa Mall",
@@ -12974,7 +12935,7 @@
                     "average_income": 2598.5
                 },
                 {
-                    "id": 4420.0,
+                    "id": 4420,
                     "name": "محمد اجمل بلفليل",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "49-AlAhsa Mall",
@@ -13013,7 +12974,7 @@
                     "average_income": 3388.88
                 },
                 {
-                    "id": 4611.0,
+                    "id": 4611,
                     "name": "الهنوف سالم الفريج",
                     "title": "بائع",
                     "outlet": "49-AlAhsa Mall",
@@ -13052,7 +13013,7 @@
                     "average_income": 5561.2
                 },
                 {
-                    "id": 4662.0,
+                    "id": 4662,
                     "name": "شهد حمدان العامري",
                     "title": "بائع",
                     "outlet": "49-AlAhsa Mall",
@@ -13096,7 +13057,7 @@
             "original_name": "15-Riyadh Othaim Mall",
             "employees": [
                 {
-                    "id": 4217.0,
+                    "id": 4217,
                     "name": "ليان سليمان الرشود",
                     "title": "بائع",
                     "outlet": "15-Riyadh Othaim Mall",
@@ -13135,13 +13096,13 @@
                     "average_income": 5537.954444444445
                 },
                 {
-                    "id": 4459.0,
+                    "id": 4459,
                     "name": "جود محمد السبيعي",
                     "title": "بائع",
                     "outlet": "15-Riyadh Othaim Mall",
                     "manager": "عبد الجليل الحبال",
                     "join_date": "2/2/2025",
-                    "years_of_service": "10 شهور",
+                    "years_of_service": "11 شهور",
                     "salary": 5000.0,
                     "total_commission": 4062.0,
                     "total_sales": 406757.0,
@@ -13174,7 +13135,7 @@
                     "average_income": 5530.25
                 },
                 {
-                    "id": 4691.0,
+                    "id": 4691,
                     "name": "محمد باسيل نجارامثوديكا",
                     "title": "عامل تحميل و تنزيل",
                     "outlet": "15-Riyadh Othaim Mall",
@@ -13213,7 +13174,7 @@
                     "average_income": 2500.0
                 },
                 {
-                    "id": 4694.0,
+                    "id": 4694,
                     "name": "ريم حسن عسيري",
                     "title": "بائع",
                     "outlet": "15-Riyadh Othaim Mall",
@@ -13257,7 +13218,7 @@
             "original_name": "32-Atyaf Mall Riyadh",
             "employees": [
                 {
-                    "id": 4454.0,
+                    "id": 4454,
                     "name": "شهد ماجد العتيبي",
                     "title": "بائع",
                     "outlet": "32-Atyaf Mall Riyadh",
@@ -13296,12 +13257,12 @@
                     "average_income": 5754.875
                 },
                 {
-                    "id": 4736.0,
+                    "id": 4736,
                     "name": "يارا عبدالمحسن الزهراني",
                     "title": "بائع",
                     "outlet": "32-Atyaf Mall Riyadh",
                     "manager": "محمدكلو",
-                    "join_date": "2025-10-15",
+                    "join_date": "10/15/2025",
                     "years_of_service": "2 شهور",
                     "salary": 5000.0,
                     "total_commission": 0.0,

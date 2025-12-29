@@ -224,7 +224,8 @@
         const commissionMonths = monthlyComms.filter(v => v > 0).length || 1;
 
         const avgCommission = calculatedTotalCommission / commissionMonths;
-        const avgIncome = (parseFloat(emp.salary) || 0) + avgCommission;
+        // const avgIncome = (parseFloat(emp.salary) || 0) + avgCommission;
+        const avgIncome = ((parseFloat(emp.salary) || 0) * emp.monthsWorked + calculatedTotalCommission) / emp.monthsWorked;
 
         const outletTotal = outletTotals[emp.outlet] || 1;
         // Use calculated total sales
@@ -240,7 +241,7 @@
             <td title="تاريخ الانضمام: ${emp.join_date}">${emp.years_of_service}</td>
             <td title="الراتب الشهري الثابت">${formatNumber(emp.salary)}</td>
             <td title="إجمالي العمولات (محسوبة من تفاصيل الأشهر)">${formatNumber(calculatedTotalCommission)}</td>
-            <td title="الراتب + (متوسط عمولة ${commissionMonths} شهر فعلي)">${formatNumber(avgIncome)}</td>
+            <td title="((الراتب × ${emp.monthsWorked}) + إجمالي العمولات) / ${emp.monthsWorked}">${formatNumber(avgIncome)}</td>
           </tr>`;
       }).join('');
 
@@ -357,7 +358,7 @@
     }
 
     function calculateAvgSales(totalSales, joinDateStr) {
-      if (!totalSales) return { avg: 0, monthsWorked: 0, fromMonth: "-", toMonth: "-" };
+      if (totalSales === null || totalSales === undefined) return { avg: 0, monthsWorked: 0, fromMonth: "-", toMonth: "-" };
       const joinDate = new Date(joinDateStr);
       const startOfYear = new Date('2025-01-01');
       const endOfData = new Date('2025-11-30');
