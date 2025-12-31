@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>لوحة بيانات الموظفين</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     body {
@@ -117,6 +118,18 @@
       </div>
     </div>
 
+    <div>
+      <button id="export-btn"
+        class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded shadow flex items-center gap-2">
+        <span>تصدير إلى Excel</span>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+          class="w-5 h-5">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+        </svg>
+      </button>
+    </div>
+
     <div id="dashboard-container" class="space-y-10"></div>
   </div>
 
@@ -137,6 +150,9 @@
     const modalName = document.getElementById('modalName');
     const modalContent = document.getElementById('modalContent');
     const closeModal = document.getElementById('closeModal');
+    const exportBtn = document.getElementById('export-btn');
+
+    let currentFilteredEmployees = [];
 
     closeModal.addEventListener('click', () => modal.classList.remove('active'));
     modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('active'); });
@@ -169,6 +185,7 @@
 
       managerFilter.addEventListener('change', updateView);
       roleContainer.addEventListener('change', updateView);
+      exportBtn.addEventListener('click', () => exportToExcel(currentFilteredEmployees));
       displayManagerSections(employeesByStore, managers);
     }
 
@@ -212,8 +229,11 @@
 
       if (!allEmployees.length) {
         container.innerHTML = `<p class='text-center text-gray-500 mt-8'>لا توجد بيانات مطابقة</p>`;
+        currentFilteredEmployees = [];
         return;
       }
+
+      currentFilteredEmployees = allEmployees;
 
       let rows = allEmployees.map(emp => {
         const joinDate = new Date(emp.join_date);
@@ -377,6 +397,49 @@
     function formatNumber(num) {
       const n = parseFloat(num) || 0;
       return new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 }).format(n);
+    }
+
+    function exportToExcel(data) {
+      if (!data || data.length === 0) {
+        alert("لا توجد بيانات لتصديرها");
+        return;
+      }
+
+      const exportData = data.map(emp => {
+        const monthlyComms = (emp.monthly_commissions || []).map(v => parseFloat(v) || 0);
+        const calculatedTotalCommission = monthlyComms.reduce((a, b) => a + b, 0);
+
+        // Recalculate avgIncome for export to ensure consistency
+        const avgIncome = ((parseFloat(emp.salary) || 0) * emp.monthsWorked + calculatedTotalCommission) / emp.monthsWorked;
+
+        // Outlet total for share percentage logic (re-calculating locally or passing it would be better, 
+        // but for simplicity we will just export what we have on the employee object if we stored it, 
+        // otherwise we might miss 'calculatedTotalSales'. 
+        // NOTE: calculatedTotalSales IS stored in allEmployees map loop.
+
+        return {
+          "اسم الموظف": emp.name,
+          "المسمى الوظيفي": emp.title,
+          "المعرض": emp.outlet,
+          "إجمالي المبيعات": Math.round(emp.calculatedTotalSales),
+          "متوسط المبيعات الشهرية": Math.round(emp.avg),
+          "سنوات الخدمة": emp.years_of_service,
+          "تاريخ الانضمام": emp.join_date,
+          "الراتب الأساسي": Math.round(parseFloat(emp.salary) || 0),
+          "إجمالي العمولات": Math.round(calculatedTotalCommission),
+          "متوسط الدخل الشهري": Math.round(avgIncome)
+        };
+      });
+
+      const ws = XLSX.utils.json_to_sheet(exportData);
+      const wb = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(wb, ws, "Employees");
+
+      // Auto-width for columns
+      const wscols = Object.keys(exportData[0]).map(k => ({ wch: 20 }));
+      ws['!cols'] = wscols;
+
+      XLSX.writeFile(wb, "employees_data.xlsx");
     }
 
     document.addEventListener('DOMContentLoaded', initializeDashboard);
